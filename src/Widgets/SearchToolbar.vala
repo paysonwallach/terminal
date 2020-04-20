@@ -94,7 +94,7 @@ namespace Terminal.Widgets {
                     cycle_button.sensitive = false;
                 }
 
-                var term = (Vte.Terminal)(window.current_terminal);
+                var term = (Vte.Terminal)(window.terminal);
                 var search_term = search_entry.text;
                 previous_search ();  /* Ensure that we still at the highlighted occurrence */
 
@@ -130,13 +130,13 @@ namespace Terminal.Widgets {
         }
 
         public void previous_search () {
-            window.current_terminal.search_set_wrap_around (cycle_button.active);
-            window.current_terminal.search_find_previous ();
+            window.terminal.search_set_wrap_around (cycle_button.active);
+            window.terminal.search_find_previous ();
         }
 
         public void next_search () {
-            window.current_terminal.search_set_wrap_around (cycle_button.active);
-            window.current_terminal.search_find_next ();
+            window.terminal.search_set_wrap_around (cycle_button.active);
+            window.terminal.search_find_next ();
         }
     }
 }

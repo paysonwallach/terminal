@@ -93,7 +93,7 @@ public class Terminal.Application : Gtk.Application {
 
         dbus.finished_process.connect ((id, process, exit_status) => {
             foreach (var window in windows) {
-                var terminal = window.current_terminal;
+                var terminal = window.terminal;
                 if (terminal.terminal_id == id) {
 
                     if (!terminal.is_init_complete ()) {
@@ -170,7 +170,7 @@ public class Terminal.Application : Gtk.Application {
             } else if (command_x != null) {
                 const string WARNING = "Usage: --commandline=[COMMANDLINE] without spaces around '='\r\n\r\n";
                 start_terminal_with_working_directory (working_directory);
-                get_last_window ().current_terminal.feed (WARNING.data);
+                get_last_window ().terminal.feed (WARNING.data);
             } else {
                 start_terminal_with_working_directory (working_directory);
             }
