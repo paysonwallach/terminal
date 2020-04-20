@@ -36,9 +36,6 @@ public class Terminal.Application : Gtk.Application {
     // option_new_window will be true if the new-window flag was given.
     private static bool option_new_window = false;
 
-    // option_new_tab will be true if the new-tab flag was given.
-    private static bool option_new_tab = false;
-
     public int minimum_width;
     public int minimum_height;
 
@@ -67,8 +64,6 @@ public class Terminal.Application : Gtk.Application {
 
         if (window == null) {
             new MainWindow (this);
-        } else {
-            new MainWindow (this, false);
         }
     }
 
@@ -98,30 +93,21 @@ public class Terminal.Application : Gtk.Application {
 
         dbus.finished_process.connect ((id, process, exit_status) => {
             foreach (var window in windows) {
-                foreach (var terminal in window.terminals) {
-                    if (terminal.terminal_id == id) {
+                var terminal = window.current_terminal;
+                if (terminal.terminal_id == id) {
 
-                        if (!terminal.is_init_complete ()) {
-                            terminal.set_init_complete ();
-                        } else {
+                    if (!terminal.is_init_complete ()) {
+                        terminal.set_init_complete ();
+                    } else {
 
-                            if (terminal != window.current_terminal) {
-                                if (exit_status == 0) {
-                                    terminal.tab.icon = new ThemedIcon ("process-completed-symbolic");
-                                } else {
-                                    terminal.tab.icon = new ThemedIcon ("process-error-symbolic");
-                                }
-                            }
-
-                            if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                                var notification = new Notification (_("Task finished"));
-                                notification.set_body (process);
-                                notification.set_icon (new ThemedIcon ("utilities-terminal"));
-                                send_notification (null, notification);
-                            }
+                        if ((window.get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0) {
+                            var notification = new Notification (_("Task finished"));
+                            notification.set_body (process);
+                            notification.set_icon (new ThemedIcon ("utilities-terminal"));
+                            send_notification (null, notification);
                         }
-
                     }
+
                 }
             }
         });
@@ -196,7 +182,6 @@ public class Terminal.Application : Gtk.Application {
         command_x = null;
         option_help = false;
         option_new_window = false;
-        option_new_tab = false;
         working_directory = null;
 
         return 0;
@@ -207,38 +192,20 @@ public class Terminal.Application : Gtk.Application {
         window = get_last_window ();
 
         if (window == null || option_new_window) {
-            window = new MainWindow (this, false);
+            window = new MainWindow (this);
         }
 
         foreach (string command in commands) {
-            window.add_tab_with_command (command, working_directory, option_new_tab);
+            new MainWindow.with_working_directory (this, working_directory);
         }
     }
 
     private void run_command_line (string command_line, string? working_directory = null) {
-        MainWindow? window;
-        window = get_last_window ();
-
-        if (window == null || option_new_window) {
-            window = new MainWindow (this, false);
-        }
-
-        window.add_tab_with_command (command_line, working_directory, option_new_tab);
+        new MainWindow.with_working_directory (this, working_directory);
     }
 
     private void start_terminal_with_working_directory (string? working_directory) {
-        MainWindow? window;
-        window = get_last_window ();
-
-        if (window != null && !option_new_window) {
-            window.add_tab_with_working_directory (working_directory, null, option_new_tab);
-            window.present ();
-        } else
-            /* Uncertain whether tabs should be restored when app is launched with working directory from commandline.
-             * Currently they are set to restore (subject to the restore-tabs setting).
-             * If it is desired that tabs should never be restored in these circimstances set 3rd parameter to false
-             * below. */
-            new MainWindow.with_working_directory (this, working_directory, window == null, option_new_tab);
+        new MainWindow.with_working_directory (this, working_directory);
     }
 
     private MainWindow? get_last_window () {
@@ -259,9 +226,6 @@ public class Terminal.Application : Gtk.Application {
 
         /* -n flag forces a new window, instead of a new tab */
         { "new-window", 'n', 0, OptionArg.NONE, ref option_new_window, N_("Open a new terminal window"), null },
-
-        /* -t flag forces a new tab  */
-        { "new-tab", 't', 0, OptionArg.NONE, ref option_new_tab, N_("Open a new terminal tab"), null },
 
         { "help", 'h', 0, OptionArg.NONE, ref option_help, N_("Show help"), null },
         { "working-directory", 'w', 0, OptionArg.FILENAME, ref working_directory,

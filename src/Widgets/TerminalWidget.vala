@@ -49,22 +49,7 @@ namespace Terminal {
         }
 
         private Gtk.Menu menu;
-        public Granite.Widgets.Tab tab;
         public string? uri;
-
-        private string _tab_label;
-        public string tab_label {
-            get {
-                return _tab_label;
-            }
-
-            set {
-                if (value != null) {
-                    _tab_label = value;
-                    tab.label = tab_label;
-                }
-            }
-        }
 
         public int default_size;
 
