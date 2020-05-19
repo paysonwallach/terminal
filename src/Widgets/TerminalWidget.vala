@@ -49,11 +49,31 @@ namespace Terminal {
         }
 
         private Gtk.Menu menu;
+        public Granite.Widgets.Tab tab;
         public string? uri;
 
-        public int default_size;
+        private string _tab_label;
+        public string tab_label {
+            get {
+                return _tab_label;
+            }
 
-        const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call --session --dest=io.elementary.terminal /io/elementary/terminal io.elementary.terminal.ProcessFinished string:$PANTHEON_TERMINAL_ID string:\"$(history 1 | cut -c 8-)\" int32:\$__bp_last_ret_value >/dev/null 2>&1";
+            set {
+                if (value != null) {
+                    _tab_label = value;
+                    tab.label = tab_label;
+                }
+            }
+        }
+
+        public int default_size;
+        const string SEND_PROCESS_FINISHED_BASH = "dbus-send --type=method_call " +
+                                                  "--session --dest=io.elementary.terminal " +
+                                                  "/io/elementary/terminal " +
+                                                  "io.elementary.terminal.ProcessFinished " +
+                                                  "string:$PANTHEON_TERMINAL_ID " +
+                                                  "string:\"$(history 1 | cut -c 8-)\" " +
+                                                  "int32:\$__bp_last_ret_value >/dev/null 2>&1";
 
         /* Following strings are used to build RegEx for matching URIs */
         const string USERCHARS = "-[:alnum:]";
@@ -69,7 +89,11 @@ namespace Terminal {
                               "|git\\+ssh:|bzr:|bzr\\+ssh:|svn:|svn\\+ssh:|hg:|mailto:|magnet:)";
 
         const string USERPASS = USERCHARS_CLASS + "+(?:" + PASSCHARS_CLASS + "+)?";
-        const string URLPATH = "(?:(/" + PATHCHARS_CLASS + "+(?:[(]" + PATHCHARS_CLASS + "*[)])*" + PATHCHARS_CLASS + "*)*" + PATHTERM_CLASS + ")?";
+        const string URLPATH = "(?:(/" + PATHCHARS_CLASS +
+                               "+(?:[(]" + PATHCHARS_CLASS +
+                               "*[)])*" + PATHCHARS_CLASS +
+                               "*)*" + PATHTERM_CLASS +
+                               ")?";
 
         const string[] REGEX_STRINGS = {
             SCHEME + "//(?:" + USERPASS + "\\@)?" + HOST + PORT + URLPATH,
@@ -92,12 +116,9 @@ namespace Terminal {
             private set;
         }
 
-        private long remembered_cursor_row; /* Only need to remember row at the moment */
-        private long remembered_command_start_row = 0;
-        private long remembered_command_start_col = 0;
+        private long remembered_position; /* Only need to remember row at the moment */
+        private long remembered_command_start_row = 0; /* Only need to remember row at the moment */
         private long remembered_command_end_row = 0; /* Only need to remember row at the moment */
-        private Gdk.RGBA background_color = Gdk.RGBA ();
-        private Gdk.RGBA cursor_color = Gdk.RGBA ();
         public bool last_key_was_return = true;
 
         private double total_delta_y = 0.0;
@@ -124,39 +145,7 @@ namespace Terminal {
                  * expired and we can follow hyperlinks */
                 allow_hyperlink = window.focus_timeout == 0;
 
-                if (event.button == Gdk.BUTTON_PRIMARY && allow_hyperlink && !has_foreground_process ()) {
-                    long current_col, current_row, clicked_row, clicked_col;
-                    get_cursor_position (out current_col, out current_row);
-                    get_clicked_cell_position (event, out clicked_row, out clicked_col);
-                    remember_command_start_position ();
-
-                    if (clicked_row < remembered_command_start_row ||
-                       (clicked_row == remembered_command_start_row &&
-                       clicked_col < remembered_command_start_col)) {
-                        return Gdk.EVENT_PROPAGATE;
-                    }
-
-                    long delta_cells = clicked_col - current_col + (clicked_row - current_row) * get_column_count ();
-
-                    // make cursor invisible to avoid flickering
-                    var previous_cursor_blink_mode = cursor_blink_mode;
-                    cursor_blink_mode = Vte.CursorBlinkMode.OFF;
-                    set_color_cursor (background_color);
-
-                    // use escape sequence to move cursor: http://ascii-table.com/ansi-escape-sequences.php
-                    var sequence = delta_cells > 0U ? "\033[C" : "\033[D";
-                    var n_events = (int) delta_cells.abs ();
-                    for (int i = 0; i < n_events; i++) {
-                        this.feed_child (sequence, 3);
-                    }
-
-                    // wait for shell to move cursor, then restore cursor visibility
-                    Timeout.add (50, () => {
-                        cursor_blink_mode = previous_cursor_blink_mode;
-                        set_color_cursor (cursor_color);
-                        return Source.REMOVE;
-                    });
-                } else if (event.button == Gdk.BUTTON_SECONDARY) {
+                if (event.button == Gdk.BUTTON_SECONDARY) {
                     uri = get_link (event);
 
                     if (uri != null) {
@@ -166,18 +155,14 @@ namespace Terminal {
                     menu.select_first (false);
                     menu.popup_at_pointer (event);
 
-                    return Gdk.EVENT_STOP;
+                    return true;
                 }
 
-                return Gdk.EVENT_PROPAGATE;
-            });
-
-            key_release_event.connect (() => {
-                remember_position ();
-                return Gdk.EVENT_PROPAGATE;
+                return false;
             });
 
             button_release_event.connect ((event) => {
+
                 if (event.button == Gdk.BUTTON_PRIMARY) {
                     if (allow_hyperlink) {
                         uri = get_link (event);
@@ -237,14 +222,6 @@ namespace Terminal {
 
             size_allocate.connect (() => {
                 resized = true;
-                long new_cursor_row, new_cursor_col;
-                get_cursor_position (out new_cursor_col, out new_cursor_row);
-                if (remembered_cursor_row != new_cursor_row) {
-                    var delta = new_cursor_row - remembered_cursor_row;
-                    remembered_cursor_row = new_cursor_row;
-                    remembered_command_end_row += delta;
-                    remembered_command_start_row += delta;
-                }
             });
 
             child_exited.connect (on_child_exited);
@@ -273,6 +250,7 @@ namespace Terminal {
             var gtk_settings = Gtk.Settings.get_default ();
             gtk_settings.gtk_application_prefer_dark_theme = Application.settings.get_boolean ("prefer-dark-style");
 
+            Gdk.RGBA background_color = Gdk.RGBA ();
             background_color.parse (Application.settings.get_string ("background"));
 
             Gdk.RGBA foreground_color = Gdk.RGBA ();
@@ -324,6 +302,7 @@ namespace Terminal {
 
             set_colors (foreground_color, background_color, palette);
 
+            Gdk.RGBA cursor_color = Gdk.RGBA ();
             cursor_color.parse (Application.settings.get_string ("cursor-color"));
             set_color_cursor (cursor_color);
 
@@ -548,7 +527,7 @@ namespace Terminal {
         public void remember_position () {
             long col, row;
             get_cursor_position (out col, out row);
-            remembered_cursor_row = row;
+            remembered_position = row;
         }
 
         public void remember_command_start_position () {
@@ -559,7 +538,6 @@ namespace Terminal {
             long col, row;
             get_cursor_position (out col, out row);
             remembered_command_start_row = row;
-            remembered_command_start_col = col;
             last_key_was_return = false;
             resized = false;
         }
@@ -605,16 +583,13 @@ namespace Terminal {
             return get_text_range (start_row, 0, output_end_row - 1, 1000, null, null) + "\n";
         }
 
-        private void get_clicked_cell_position (Gdk.EventButton event, out long row, out long col) {
-            row = (long)(event.y / get_char_height ()) + (long)(get_vadjustment ().get_value ());
-            col = (long)(event.x / get_char_width ());
-        }
-
         public void scroll_to_last_command () {
             long col, row;
             get_cursor_position (out col, out row);
-            int delta = (int)(remembered_command_end_row - row);
-            vadjustment.set_value (vadjustment.get_value () + delta + get_window ().get_height () / get_char_height () - 1);
+            int delta = (int)(remembered_position - row);
+            vadjustment.set_value (
+                vadjustment.get_value () + delta + get_window ().get_height () / get_char_height () - 1
+            );
         }
 
         public bool has_output () {
