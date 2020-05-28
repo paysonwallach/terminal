@@ -23,6 +23,7 @@ namespace Terminal {
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.SearchToolbar search_toolbar;
         private Gtk.Revealer search_revealer;
+        private Gtk.Overlay overlay;
 
         private bool is_fullscreen = false;
         private bool search_is_active = false;
@@ -30,6 +31,11 @@ namespace Terminal {
         private const int NORMAL = 0;
         private const int MAXIMIZED = 1;
         private const int FULLSCREEN = 2;
+
+        private int rows = 0;
+        private int cols = 0;
+        private uint? resize_overlay_callback_id;
+        private Gtk.Label resize_overlay;
 
         private const string HIGH_CONTRAST_BG = "#fff";
         private const string HIGH_CONTRAST_FG = "#333";
@@ -304,7 +310,11 @@ namespace Terminal {
 
             get_style_context ().add_class ("terminal-window");
             set_titlebar (header);
-            add (grid);
+
+            overlay = new Gtk.Overlay ();
+            overlay.add (grid);
+
+            add (overlay);
 
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {
@@ -506,6 +516,28 @@ namespace Terminal {
 
                 return false;
             });
+
+            if (get_window () == null)
+                return false;
+
+            int rows = (int) terminal.get_row_count ();
+            int cols = (int) terminal.get_column_count ();
+
+            if (this.rows != rows || this.cols != cols) {
+                if (resize_overlay_callback_id != null) {
+                    Source.remove (resize_overlay_callback_id);
+                    resize_overlay.destroy ();
+                }
+
+                this.rows = rows;
+                this.cols = cols;
+
+                resize_overlay = new Gtk.Label (@"$rows x $cols");
+                resize_overlay_callback_id = Timeout.add (1000, () => { resize_overlay.destroy (); return false; });
+
+                resize_overlay.show_all ();
+                overlay.add_overlay (resize_overlay);
+            }
 
             return base.configure_event (event);
         }
