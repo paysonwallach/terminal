@@ -209,8 +209,25 @@ namespace Terminal {
             show_settings_menuitem.set_action_name (ACTION_PREFIX + ACTION_SHOW_SETTINGS);
             show_settings_menuitem.add (new Granite.AccelLabel.from_action_name ("Settings", show_settings_menuitem.action_name));
 
+            var reset_size_submenu_item = new Gtk.MenuItem ();
+            var reset_size_submenu_item_label = new Gtk.Label ("Reset size");
+
+            reset_size_submenu_item_label.set_hexpand (true);
+            reset_size_submenu_item_label.set_halign (Gtk.Align.START);
+            reset_size_submenu_item.add (reset_size_submenu_item_label);
+            reset_size_submenu_item.activate.connect (() => {
+                var char_width = (int) terminal.get_char_width ();
+                var char_height = (int) terminal.get_char_height ();
+                int border_width, border_height;
+
+                get_border_dimensions (char_width, char_height, out border_width, out border_height);
+                resize (80 * char_width + border_width, 25 * char_height + border_height);
+                // terminal.set_size (80, 25);
+            });
+
             var submenu = new Gtk.Menu ();
             submenu.append (show_inspector_submenu_item);
+            submenu.append (reset_size_submenu_item);
 
             var advanced_submenu_menuitem = new Gtk.MenuItem ();
             advanced_submenu_menuitem.set_label ("Advanced");
@@ -423,6 +440,14 @@ namespace Terminal {
 
             grid.attach (t, 0, 1, 1, 1);
             terminal = t;
+        }
+
+        private void get_border_dimensions (int char_width, int char_height, out int border_width, out int border_height) {
+            Gtk.Requisition minimum_size, natural_size;
+
+            terminal.get_preferred_size (out minimum_size, out natural_size);
+            border_width = natural_size.width - (char_width * (int) terminal.get_column_count ());
+            border_height = natural_size.height - (char_height * (int) terminal.get_row_count ());
         }
 
         private bool handle_paste_event () {
