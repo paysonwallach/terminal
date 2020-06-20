@@ -1,54 +1,58 @@
-/*
-* Copyright 2017-2020 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+/**
+ * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License version 3, as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.
+ *
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ */
 
-.terminal-window.background {
-    background-color: transparent;
+.terminal-window .titlebar {
+  border-bottom : none;
 }
 
-.terminal-window.background.maximized,
-.terminal-window.background.tiled {
-    background-color: #000;
+.terminal-window .titlebar,
+.terminal-window .titlebar:backdrop {
+  background : #1d1f21;
+}
+
+.terminal-window.background {
+  background-color : transparent;
 }
 
 vte-terminal {
-    padding-left: 4px;
-    padding-right: 4px;
+  padding : 0 4px;
+}
+
 .searchbar {
   border-radius : 2.5px;
 }
 
 .color-button radio,
 .color-button radio:checked {
-   padding: 10px;
-   -gtk-icon-shadow: none;
+  padding : 10px;
 }
 
 .color-dark radio {
-    background: rgb(46, 46, 46);
-    color: #a5a5a5;
+  color      : #a5a5a5;
+  background : rgb(46, 46, 46);
 }
 
 .color-light radio {
-    background: #fdf6e3;
-    color: #586e75;
+  color      : #586e75;
+  background : #fdf6e3;
 }
 
 .color-white radio {
-    background: #fff;
-    color: #000;
+  color      : #000;
+  background : #fff;
 }
