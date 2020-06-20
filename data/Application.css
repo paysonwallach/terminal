@@ -28,6 +28,8 @@
 vte-terminal {
     padding-left: 4px;
     padding-right: 4px;
+.searchbar {
+  border-radius : 2.5px;
 }
 
 .color-button radio,

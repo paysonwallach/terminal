@@ -23,7 +23,7 @@ namespace Terminal {
         private Gtk.Clipboard primary_selection;
         private Terminal.Widgets.Searchbar searchbar;
         private Gtk.Revealer search_revealer;
-        private Gtk.Overlay overlay;
+        private Gtk.Overlay window_geometry_overlay;
 
         private bool is_fullscreen = false;
         private bool search_is_active = false;
@@ -297,6 +297,7 @@ namespace Terminal {
 
         private void setup_ui () {
             var provider = new Gtk.CssProvider ();
+
             provider.load_from_resource ("io/elementary/terminal/Application.css");
             // Vte.Terminal itself registers its default styling with the APPLICATION priority:
             // https://gitlab.gnome.org/GNOME/vte/blob/0.52.2/src/vtegtk.cc#L374-377
@@ -307,32 +308,37 @@ namespace Terminal {
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION + 1
             );
 
+            get_style_context ().add_class ("terminal-window");
+
             var header = new Gtk.HeaderBar ();
             header.show_close_button = true;
             header.has_subtitle = false;
             header.get_style_context ().add_class ("default-decoration");
 
+            set_titlebar (header);
+
+            window_geometry_overlay = new Gtk.Overlay ();
+
             searchbar = new Terminal.Widgets.Searchbar (this);
             searchbar.get_style_context ().add_class ("searchbar");
 
             search_revealer = new Gtk.Revealer ();
-            search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
-            search_revealer.add (search_toolbar);
+            search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_RIGHT);
+            search_revealer.add (searchbar);
+            search_revealer.margin = 12;
+            search_revealer.hexpand = true;
+            search_revealer.halign = Gtk.Align.END;
+            search_revealer.valign = Gtk.Align.START;
 
             get_simple_action (ACTION_COPY).set_enabled (false);
             get_simple_action (ACTION_COPY_LAST_OUTPUT).set_enabled (false);
             get_simple_action (ACTION_SCROLL_TO_LAST_COMMAND).set_enabled (false);
 
-            var grid = new Gtk.Grid ();
-            grid.attach (search_revealer, 0, 0, 1, 1);
+            var searchbar_overlay = new Gtk.Overlay ();
 
-            get_style_context ().add_class ("terminal-window");
-            set_titlebar (header);
-
-            overlay = new Gtk.Overlay ();
-            overlay.add (grid);
-
-            add (overlay);
+            searchbar_overlay.add_overlay (search_revealer);
+            window_geometry_overlay.add (searchbar_overlay);
+            add (window_geometry_overlay);
 
             key_press_event.connect ((e) => {
                 if (e.is_modifier == 1) {
@@ -439,7 +445,7 @@ namespace Terminal {
             t.set_font (term_font);
             t.active_shell ();
 
-            grid.attach (t, 0, 1, 1, 1);
+            searchbar_overlay.add (t);
             terminal = t;
         }
 
@@ -562,7 +568,7 @@ namespace Terminal {
                 resize_overlay_callback_id = Timeout.add (1000, () => { resize_overlay.destroy (); return false; });
 
                 resize_overlay.show_all ();
-                overlay.add_overlay (resize_overlay);
+                window_geometry_overlay.add_overlay (resize_overlay);
             }
 
             return base.configure_event (event);
