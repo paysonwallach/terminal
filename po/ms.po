@@ -180,19 +180,19 @@ msgstr "Jangan Tampal"
 msgid "Paste Anyway"
 msgstr "Tampal Jua"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/Searchbar.vala:36
 msgid "Find"
 msgstr "Cari"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/Searchbar.vala:42
 msgid "Previous result"
 msgstr "Keputusan terdahulu"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/Searchbar.vala:49
 msgid "Next result"
 msgstr "Keputusan berikutnya"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/Searchbar.vala:56
 msgid "Cyclic search"
 msgstr ""
 

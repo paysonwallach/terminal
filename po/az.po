@@ -180,19 +180,19 @@ msgstr "Yapışdırma"
 msgid "Paste Anyway"
 msgstr "Məhəl qoyma, yapışdır"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/Searchbar.vala:36
 msgid "Find"
 msgstr "Tap"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/Searchbar.vala:42
 msgid "Previous result"
 msgstr "Əvvəlki nəticə"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/Searchbar.vala:49
 msgid "Next result"
 msgstr "Növbəti nəticə"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/Searchbar.vala:56
 msgid "Cyclic search"
 msgstr ""
 

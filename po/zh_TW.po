@@ -182,19 +182,19 @@ msgstr "不要貼上"
 msgid "Paste Anyway"
 msgstr "無論如何都要貼上"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/Searchbar.vala:36
 msgid "Find"
 msgstr "尋找"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/Searchbar.vala:42
 msgid "Previous result"
 msgstr "上個結果"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/Searchbar.vala:49
 msgid "Next result"
 msgstr "下個結果"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/Searchbar.vala:56
 msgid "Cyclic search"
 msgstr "循環搜尋"
 

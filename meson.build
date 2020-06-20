@@ -53,7 +53,7 @@ executable(
     'src/MainWindow.vala',
     'src/Dialogs/ForegroundProcessDialog.vala',
     'src/Dialogs/UnsafePasteDialog.vala',
-    'src/Widgets/SearchToolbar.vala',
+    'src/Widgets/Searchbar.vala',
     'src/Widgets/TerminalWidget.vala',
     terminal_resources,
     dependencies: [

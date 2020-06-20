@@ -180,19 +180,19 @@ msgstr "붙여넣지 마세요"
 msgid "Paste Anyway"
 msgstr "그래도 붙여넣기"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/Searchbar.vala:36
 msgid "Find"
 msgstr "찾기"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/Searchbar.vala:42
 msgid "Previous result"
 msgstr "이전 결과"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/Searchbar.vala:49
 msgid "Next result"
 msgstr "다음 결과"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/Searchbar.vala:56
 msgid "Cyclic search"
 msgstr "순환 검색"
 

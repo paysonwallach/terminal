@@ -180,19 +180,19 @@ msgstr "Non pegue"
 msgid "Paste Anyway"
 msgstr "Pegue de todos modos"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/Searchbar.vala:36
 msgid "Find"
 msgstr "Atopar"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/Searchbar.vala:42
 msgid "Previous result"
 msgstr "Resultado anterior"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/Searchbar.vala:49
 msgid "Next result"
 msgstr "Resultado seguinte"
 
-#: src/Widgets/SearchToolbar.vala:56
+#: src/Widgets/Searchbar.vala:56
 msgid "Cyclic search"
 msgstr "Búsqueda cíclica"
 

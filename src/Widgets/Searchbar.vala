@@ -19,14 +19,14 @@
 
 namespace Terminal.Widgets {
 
-    public class SearchToolbar : Gtk.Grid {
+    public class Searchbar : Gtk.Grid {
         private Gtk.ToggleButton cycle_button;
         private uint last_search_term_length = 0;
 
         public weak MainWindow window { get; construct; }
         public Gtk.SearchEntry search_entry;
 
-        public SearchToolbar (MainWindow window) {
+        public Searchbar (MainWindow window) {
             Object (window: window);
         }
 
@@ -58,7 +58,6 @@ namespace Terminal.Widgets {
             cycle_button.tooltip_text = _("Cyclic search");
 
             var search_grid = new Gtk.Grid ();
-            search_grid.margin = 3;
             search_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
             search_grid.add (search_entry);
             search_grid.add (next_button);

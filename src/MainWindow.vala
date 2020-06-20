@@ -21,7 +21,7 @@ namespace Terminal {
         private Pango.FontDescription term_font;
         private Gtk.Clipboard clipboard;
         private Gtk.Clipboard primary_selection;
-        private Terminal.Widgets.SearchToolbar search_toolbar;
+        private Terminal.Widgets.Searchbar searchbar;
         private Gtk.Revealer search_revealer;
         private Gtk.Overlay overlay;
 
@@ -312,7 +312,8 @@ namespace Terminal {
             header.has_subtitle = false;
             header.get_style_context ().add_class ("default-decoration");
 
-            search_toolbar = new Terminal.Widgets.SearchToolbar (this);
+            searchbar = new Terminal.Widgets.Searchbar (this);
+            searchbar.get_style_context ().add_class ("searchbar");
 
             search_revealer = new Gtk.Revealer ();
             search_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
@@ -340,17 +341,17 @@ namespace Terminal {
 
                 switch (e.keyval) {
                     case Gdk.Key.Escape:
-                        if (search_toolbar.search_entry.has_focus) {
+                        if (searchbar.search_entry.has_focus) {
                             search_is_active = !search_is_active;
                             return true;
                         }
                         break;
                     case Gdk.Key.Return:
-                        if (search_toolbar.search_entry.has_focus) {
+                        if (searchbar.search_entry.has_focus) {
                             if ((e.state & Gdk.ModifierType.SHIFT_MASK) != 0) {
-                                search_toolbar.previous_search ();
+                                searchbar.previous_search ();
                             } else {
-                                search_toolbar.next_search ();
+                                searchbar.next_search ();
                             }
                             return true;
                         } else {
@@ -451,7 +452,7 @@ namespace Terminal {
         }
 
         private bool handle_paste_event () {
-            if (search_toolbar.search_entry.has_focus) {
+            if (searchbar.search_entry.has_focus) {
                 return false;
             } else if (clipboard.wait_is_text_available ()) {
                 action_paste ();
@@ -689,11 +690,11 @@ namespace Terminal {
                 action_accelerators[ACTION_SEARCH_NEXT] = "<Control>Down";
                 action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control><Shift>g";
                 action_accelerators[ACTION_SEARCH_PREVIOUS] = "<Control>Up";
-                search_toolbar.grab_focus ();
+                searchbar.grab_focus ();
             } else {
                 action_accelerators.remove_all (ACTION_SEARCH_NEXT);
                 action_accelerators.remove_all (ACTION_SEARCH_PREVIOUS);
-                search_toolbar.clear ();
+                searchbar.clear ();
                 terminal.grab_focus ();
             }
 
@@ -719,13 +720,13 @@ namespace Terminal {
 
         private void action_search_next () {
             if (search_is_active) {
-                search_toolbar.next_search ();
+                searchbar.next_search ();
             }
         }
 
         private void action_search_previous () {
             if (search_is_active) {
-                search_toolbar.previous_search ();
+                searchbar.previous_search ();
             }
         }
 
