@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
 "PO-Revision-Date: 2016-01-21 14:50+0000\n"
 "Last-Translator: Maxwell Barvian <Unknown>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -18,205 +18,456 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr ""
-
-#: src/Application.vala:251
+#: src/Application.vala:52
 msgid "Show version"
 msgstr ""
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
-msgid "Run a program in terminal"
-msgstr ""
-
-#: src/Application.vala:258
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#. -n flag forces a new window
+#: src/Application.vala:54
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Deschideți o fereastră nouă"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:56
 #, fuzzy
 #| msgid "Open a new window"
-msgid "Open a new terminal tab"
+msgid "Open a new terminal tab at current working directory"
 msgstr "Deschideți o fereastră nouă"
 
-#: src/Application.vala:266
-msgid "Show help"
-msgstr ""
-
-#: src/Application.vala:268
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:58
 msgid "Set shell working directory"
 msgstr ""
 
-#: src/MainWindow.vala:214
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:60
+msgid "Run a program in terminal"
+msgstr ""
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:62
+msgid "Open terminal in a minimized state"
+msgstr ""
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:65
+msgid "Run remainder of line as a command in terminal"
+msgstr ""
+
+#: src/Application.vala:117
+msgid "[-- COMMAND…]"
+msgstr ""
+
+#: src/Application.vala:177
+msgid "Process completed"
+msgstr ""
+
+#: src/Application.vala:180
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/MainWindow.vala:155
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Copiați"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:174
+msgid "Clear Screen"
+msgstr ""
+
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
+msgid "Reset"
+msgstr ""
+
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Lipește"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Selectaţi Tot"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Afişare pe întregul ecranul"
+
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr ""
 
-#: src/MainWindow.vala:364
-msgid "Zoom out"
-msgstr ""
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Filă Nouă"
 
-#: src/MainWindow.vala:371
-msgid "Default zoom level"
-msgstr ""
-
-#: src/MainWindow.vala:378
-msgid "Zoom in"
-msgstr ""
-
-#: src/MainWindow.vala:394
-msgid "High Contrast"
-msgstr ""
-
-#: src/MainWindow.vala:402
-msgid "Solarized Light"
-msgstr ""
-
-#: src/MainWindow.vala:410
-msgid "Dark"
-msgstr ""
-
-#: src/MainWindow.vala:425
-msgid "Natural Copy/Paste"
-msgstr ""
-
-#: src/MainWindow.vala:426
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:845
+#: src/MainWindow.vala:374
+msgid "Are you sure you want to close this tab?"
+msgstr "Sunteți sigur că doriți să închideți această filă?"
+
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
+msgid "Close Tab"
+msgstr "Închideți Fila"
+
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:846
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1357
-msgid "Hide find bar"
-msgstr ""
-
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Sunteți sigur că doriți să închideți această filă?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Există un proces activ în această filă."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr ""
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Închideți Fila"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Sunteți sigur că doriți să închideți Consola?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Există un proces activ în acestă consolă."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr ""
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Închideți Consola"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
+#: src/MainWindow.vala:1039
+msgid "Hide find bar"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
+#: src/Utils.vala:142
+msgid "The pasted text may contain multiple commands"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
+#: src/Utils.vala:146
+msgid "The pasted text may be trying to gain administrative access"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Utils.vala:161
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:37
+msgid "Color Preferences"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:39
+msgid "Window style:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:46
+msgid "Light"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:47
+#: src/Widgets/SettingsPopover.vala:78
+msgid "Dark"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:51
+msgid "Color Palette"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:61
+msgid "Reset to default"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:64
+msgid "Black:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:65
+msgid "Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:66
+msgid "Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:67
+msgid "Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:68
+msgid "Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:69
+msgid "Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:70
+msgid "Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:71
+msgid "Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "White:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:73
+msgid "Light Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:74
+msgid "Light Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Light Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Light Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Light Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Light Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Light Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Background:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Foreground:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Cursor:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:179
+msgid "Close"
+msgstr "Închideți"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:299
+msgid "Contrast is very low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:302
+msgid "Contrast is low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:305
+msgid "Contrast is good"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is high"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:23
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you continue, the process will "
+"end."
+msgstr "Există un proces activ în acestă consolă."
+
+#: src/Dialogs/UnsafePasteDialog.vala:22
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Paste Anyway"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/SearchToolbar.vala:20
 msgid "Find"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:27
 msgid "Previous result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:35
 msgid "Next result"
 msgstr ""
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:46
+msgid "Disable cyclic search"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:49
+msgid "Enable cyclic search"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:31
+msgid "Zoom out"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:39
+msgid "Default zoom level"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:47
+msgid "Zoom in"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:65
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:70
+msgid "High Contrast"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:74
+msgid "Solarized Light"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:82
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:103
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:104
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Unsafe Paste Alert"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:109
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
 msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Consolă"
 
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Sunteți sigur că doriți să închideți Consola?"
+
+#: src/Widgets/TerminalWidget.vala:963
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Sunteți sigur că doriți să închideți această filă?"
+
+#: src/Widgets/TerminalWidget.vala:964
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Închideți Fila"
+
+#: src/Widgets/TerminalView.vala:63
+msgid "New Tab"
+msgstr "Filă Nouă"
+
+#: src/Widgets/TerminalView.vala:70
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Închideți Fila"
+
+#: src/Widgets/TerminalView.vala:222
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:223
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Închideți Fila"
+
+#: src/Widgets/TerminalView.vala:227
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Fereastră Nouă"
+
+#: src/Widgets/TerminalView.vala:228
+msgid "Duplicate Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:231
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload"
+msgstr "Închideți Fila"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Există un proces activ în această filă."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Există un proces activ în acestă consolă."
+
+#, fuzzy
+#~| msgid "Open a new window"
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Deschideți o fereastră nouă"
+
 #~ msgid "Cancel"
 #~ msgstr "Anulati"
 
 #~ msgid "Use the command line"
 #~ msgstr "Folosiți linia de comandă"
-
-#~ msgid "New Window"
-#~ msgstr "Fereastră Nouă"
-
-#~ msgid "Close"
-#~ msgstr "Închideți"
-
-#~ msgid "New Tab"
-#~ msgstr "Filă Nouă"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Creați o filă nouă"
@@ -235,9 +486,6 @@ msgstr "Consolă"
 
 #~ msgid "Show about window"
 #~ msgstr "Afișați despre fereastră"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Afişare pe întregul ecranul"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

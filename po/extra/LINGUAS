@@ -1,10 +1,7 @@
-aa
-ab
 ae
 af
 ak
 am
-an
 ar
 as
 ast
@@ -55,7 +52,6 @@ fy
 ga
 gd
 gl
-gn
 gu
 gv
 ha
@@ -109,7 +105,6 @@ mi
 mk
 ml
 mn
-mo
 mr
 ms
 mt
@@ -140,6 +135,7 @@ qu
 rm
 rn
 ro
+ro_MD
 ru
 rue
 rw
@@ -193,6 +189,10 @@ yo
 za
 zh
 zh_CN
-zh_HK
 zh_TW
 zu
+aa
+ab
+gn
+an
+en_ZA

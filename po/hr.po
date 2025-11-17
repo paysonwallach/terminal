@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
 "PO-Revision-Date: 2016-07-07 19:14+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -18,192 +18,472 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 "X-Generator: Launchpad (build 18232)\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Zadatak završen"
-
-#: src/Application.vala:251
+#: src/Application.vala:52
 msgid "Show version"
 msgstr ""
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
-msgid "Run a program in terminal"
-msgstr "Pokreni program u terminalu"
-
-#: src/Application.vala:258
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#. -n flag forces a new window
+#: src/Application.vala:54
 #, fuzzy
 #| msgid "Open a new window"
 msgid "Open a new terminal window"
 msgstr "Otvori novi prozor"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:56
 #, fuzzy
 #| msgid "Open a new window"
-msgid "Open a new terminal tab"
+msgid "Open a new terminal tab at current working directory"
 msgstr "Otvori novi prozor"
 
-#: src/Application.vala:266
-msgid "Show help"
-msgstr ""
-
-#: src/Application.vala:268
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:58
 msgid "Set shell working directory"
 msgstr "Postavite radni direktorij ljuske"
 
-#: src/MainWindow.vala:214
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:60
+#, fuzzy
+#| msgid "Run a program in terminal"
+msgid "Run a program in terminal"
+msgstr "Pokreni program u terminalu"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:62
+msgid "Open terminal in a minimized state"
+msgstr ""
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:65
+msgid "Run remainder of line as a command in terminal"
+msgstr ""
+
+#: src/Application.vala:117
+msgid "[-- COMMAND…]"
+msgstr ""
+
+#: src/Application.vala:177
+msgid "Process completed"
+msgstr ""
+
+#: src/Application.vala:180
+msgid "Process exited with errors"
+msgstr ""
+
+#: src/MainWindow.vala:155
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr ""
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:174
+msgid "Clear Screen"
+msgstr ""
+
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
+msgid "Reset"
+msgstr ""
+
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Zalijepi"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Odaberi sve"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Cijeli zaslon"
+
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Pretraži..."
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:313
 #, fuzzy
-msgid "Zoom out"
-msgstr "Smanji"
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Nova kartica"
 
-#: src/MainWindow.vala:371
-msgid "Default zoom level"
-msgstr ""
-
-#: src/MainWindow.vala:378
-#, fuzzy
-msgid "Zoom in"
-msgstr "Uvećaj"
-
-#: src/MainWindow.vala:394
-msgid "High Contrast"
-msgstr ""
-
-#: src/MainWindow.vala:402
-msgid "Solarized Light"
-msgstr ""
-
-#: src/MainWindow.vala:410
-msgid "Dark"
-msgstr ""
-
-#: src/MainWindow.vala:425
-msgid "Natural Copy/Paste"
-msgstr ""
-
-#: src/MainWindow.vala:426
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:325
 msgid "Settings"
 msgstr ""
 
-#: src/MainWindow.vala:845
+#: src/MainWindow.vala:374
+msgid "Are you sure you want to close this tab?"
+msgstr "Sigurno želite zatvoriti ovu karticu?"
+
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
+msgid "Close Tab"
+msgstr "Zatvori karticu"
+
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:576
 #, c-format
 msgid "Show in %s"
 msgstr ""
 
-#: src/MainWindow.vala:846
+#: src/MainWindow.vala:578
 msgid "Default application"
 msgstr ""
 
-#: src/MainWindow.vala:1357
-msgid "Hide find bar"
-msgstr ""
-
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Sigurno želite zatvoriti ovu karticu?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "U tijeku je aktivan proces na ovoj kartici."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Ako zatvorite, proces će završiti."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Zatvori karticu"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Sigurno želite zatvoriti Terminal?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "U tijeku je aktivan proces na ovom terminalu."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Ukoliko izađete iz Terminala, proces će završiti."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Zatvori Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Ova naredba traži administratorski pristup  na vaše računalo"
+#: src/MainWindow.vala:1039
+msgid "Hide find bar"
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Kopiranje naredbi u Terminal može biti opasno."
+#: src/Utils.vala:142
+msgid "The pasted text may contain multiple commands"
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Budite sigurni da razumijete što čini svaki dio ove naredbe."
+#: src/Utils.vala:146
+msgid "The pasted text may be trying to gain administrative access"
+msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Utils.vala:161
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:37
+msgid "Color Preferences"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:39
+msgid "Window style:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:46
+msgid "Light"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:47
+#: src/Widgets/SettingsPopover.vala:78
+msgid "Dark"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:51
+msgid "Color Palette"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:61
+msgid "Reset to default"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:64
+msgid "Black:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:65
+msgid "Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:66
+msgid "Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:67
+msgid "Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:68
+msgid "Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:69
+msgid "Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:70
+msgid "Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:71
+msgid "Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "White:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:73
+msgid "Light Red:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:74
+msgid "Light Green:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Light Yellow:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Light Blue:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Light Magenta:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Light Cyan:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Light Gray:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Background:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Foreground:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Cursor:"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:179
+msgid "Close"
+msgstr "Zatvori"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:299
+msgid "Contrast is very low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:302
+msgid "Contrast is low"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:305
+msgid "Contrast is good"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is high"
+msgstr ""
+
+#: src/Dialogs/ForegroundProcessDialog.vala:23
+#, fuzzy
+#| msgid "There is an active process on this terminal."
+msgid ""
+"There is an active process on this tab. If you continue, the process will "
+"end."
+msgstr "U tijeku je aktivan proces na ovom terminalu."
+
+#: src/Dialogs/UnsafePasteDialog.vala:22
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+
+#: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
 msgstr ""
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
 msgstr "Nemoj zalijepiti"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Paste Anyway"
 msgstr "Svejedno zalijepi"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/SearchToolbar.vala:20
 msgid "Find"
 msgstr "Pretraži"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:27
 msgid "Previous result"
 msgstr "Prijašnji rezultat"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:35
 msgid "Next result"
 msgstr "Sljedeći rezultat"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:46
+msgid "Disable cyclic search"
+msgstr ""
+
+#: src/Widgets/SearchToolbar.vala:49
+msgid "Enable cyclic search"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:31
+#, fuzzy
+msgid "Zoom out"
+msgstr "Smanji"
+
+#: src/Widgets/SettingsPopover.vala:39
+msgid "Default zoom level"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:47
+#, fuzzy
+msgid "Zoom in"
+msgstr "Uvećaj"
+
+#: src/Widgets/SettingsPopover.vala:65
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:70
+msgid "High Contrast"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:74
+msgid "Solarized Light"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:82
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:103
+msgid "Natural Copy/Paste"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:104
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Unsafe Paste Alert"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:109
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
 msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Sigurno želite zatvoriti Terminal?"
+
+#: src/Widgets/TerminalWidget.vala:963
+#, fuzzy
+#| msgid "Are you sure you want to close this tab?"
+msgid "Are you sure you want to reload this tab?"
+msgstr "Sigurno želite zatvoriti ovu karticu?"
+
+#: src/Widgets/TerminalWidget.vala:964
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload Tab"
+msgstr "Zatvori karticu"
+
+#: src/Widgets/TerminalView.vala:63
+msgid "New Tab"
+msgstr "Nova kartica"
+
+#: src/Widgets/TerminalView.vala:70
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Zatvori karticu"
+
+#: src/Widgets/TerminalView.vala:222
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:223
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Zatvori karticu"
+
+#: src/Widgets/TerminalView.vala:227
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Novi prozor"
+
+#: src/Widgets/TerminalView.vala:228
+msgid "Duplicate Tab"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:231
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Reload"
+msgstr "Zatvori karticu"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "U tijeku je aktivan proces na ovoj kartici."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Ako zatvorite, proces će završiti."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "U tijeku je aktivan proces na ovom terminalu."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Ukoliko izađete iz Terminala, proces će završiti."
+
+#, fuzzy
+#~| msgid "Open a new window"
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Otvori novi prozor"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Ova naredba traži administratorski pristup  na vaše računalo"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Kopiranje naredbi u Terminal može biti opasno."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Budite sigurni da razumijete što čini svaki dio ove naredbe."
+
+#~ msgid "Task finished"
+#~ msgstr "Zadatak završen"
 
 #~ msgid "Cancel"
 #~ msgstr "Odustani"
@@ -214,20 +494,11 @@ msgstr "Terminal"
 #~ msgid "Use the command line"
 #~ msgstr "Koristiti naredbeni redak"
 
-#~ msgid "New Window"
-#~ msgstr "Novi prozor"
-
 #~ msgid "New Root Tab"
 #~ msgstr "Nova korijenska kartica"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Otvori terminal ovdje"
-
-#~ msgid "Close"
-#~ msgstr "Zatvori"
-
-#~ msgid "New Tab"
-#~ msgstr "Nova kartica"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Stvori novu karticu"
@@ -261,9 +532,6 @@ msgstr "Terminal"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Idi na prijašnju karticu"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Cijeli zaslon"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Cijelozaslonski prikaz"

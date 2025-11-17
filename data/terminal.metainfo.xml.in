@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015–2022 elementary, Inc. <contact@elementary.io> -->
+<component type="desktop-application">
+  <id>io.elementary.terminal</id>
+  <launchable type="desktop-id">io.elementary.terminal.desktop</launchable>
+  <translation type="gettext">io.elementary.terminal</translation>
+  <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+
+  <name>Terminal</name>
+  <summary>Use the command line</summary>
+  <description>
+    <p>Terminal is a terminal emulator application for accessing a UNIX shell environment which can be used to run programs available on your system.</p>
+  </description>
+
+  <screenshots>
+    <screenshot environment="pantheon" type="default">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot.png</image>
+    </screenshot>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-light.png</image>
+    </screenshot>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-high-contrast.png</image>
+    </screenshot>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-find.png</image>
+    </screenshot>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-custom-style.png</image>
+    </screenshot>
+    <screenshot environment="pantheon">
+      <image>https://raw.githubusercontent.com/elementary/terminal/7.2.0/data/screenshot-paste-protection.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <provides>
+    <binary>io.elementary.terminal</binary>
+  </provides>
+
+  <url type="bugtracker">https://github.com/elementary/terminal/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://github.com/elementary/terminal/discussions/categories/q-a</url>
+  <url type="homepage">https://elementary.io/</url>
+  <url type="translate">https://l10n.elementary.io/projects/terminal/</url>
+  <url type="vcs-browser">https://github.com/elementary/terminal</url>
+
+  <developer id="org.elementaryos">
+    <name>elementary, Inc.</name>
+  </developer>
+  <project_group>elementary</project_group>
+  <update_contact>contact_AT_elementary.io</update_contact>
+
+  <releases>
+    <release version="7.2.0" date="2025-11-14" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>The option to hide the tabbar when there is only one tab is now exposed and honored</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/922">Launch link in web browser sends incorrect uri to browser</issue>
+        <issue url="https://github.com/elementary/terminal/issues/920">Clear screen does not work properly if there is pending input</issue>
+        <issue url="https://github.com/elementary/terminal/issues/832">Setting to hide tab title when there is only one tab no more work</issue>
+      </issues>
+    </release>
+
+    <release version="7.1.2" date="2025-09-23" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/891">Pasting text with trailing newline(s) trigger multiple command warning</issue>
+      </issues>
+    </release>
+
+    <release version="7.1.1" date="2025-08-22" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/876">Dropping a file with '#' in the name causes truncation</issue>
+        <issue url="https://github.com/elementary/terminal/issues/861">Inconsistent line breaks when pasting</issue>
+        <issue url="https://github.com/elementary/terminal/issues/831">Process exit status icon remains forever</issue>
+      </issues>
+    </release>
+
+    <release version="7.1.0" date="2025-08-05" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>A warning is now given if a pasted command has an option that skips confirmations</li>
+          <li>When a foreground process is launched, the tab label changes to the name of that process</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Exiting the shell in a tab now closes that tab</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/873">Requires exit twice to close one tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/872">Crash when exiting one tab</issue>
+        <issue url="https://github.com/elementary/terminal/issues/865">Show all detected unsafe paste warnings</issue>
+        <issue url="https://github.com/elementary/terminal/issues/840">Title in titlebar not centered</issue>
+        <issue url="https://github.com/elementary/terminal/issues/698">When using screen tab title does not change</issue>
+        <issue url="https://github.com/elementary/terminal/issues/646">Terminal tab title no change when ssh server</issue>
+      </issues>
+    </release>
+
+    <release version="7.0.0" date="2025-02-12" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/845">Terminal Tabs require 3 tab key presses to get focus</issue>
+        <issue url="https://github.com/elementary/terminal/issues/853">Tab that is dragged out of window does not close</issue>
+      </issues>
+    </release>
+
+    <release version="6.3.1" date="2025-01-08" urgency="medium">
+      <description>
+        <p>Other updates:</p>
+        <ul>
+          <li>Stop window size increasing when opened</li>
+          <li>Change hotkeys for Reset and Clear Screen actions</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/834">Tab cycling is not cyclic</issue>
+        <issue url="https://github.com/elementary/terminal/issues/821">The new terminal (v6.3.0) is opening with ever increasing geometry</issue>
+        <issue url="https://github.com/elementary/terminal/issues/820">The new terminal (v6.3.0) is destroying current process on Ctrl-L</issue>
+        <issue url="https://github.com/elementary/terminal/issues/819">Reset action uses Ctrl+K as hotkey</issue>
+      </issues>
+    </release>
+
+    <release version="6.3.0" date="2024-12-09" urgency="medium">
+      <description translate="no">
+        <p>New features:</p>
+        <ul>
+          <li>Show zoom level in overlay when zooming</li>
+          <li>Implement Clear and Reset context menu actions with accelerators</li>
+          <li>Add toggle for unsafe paste warning to application menu</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Update the icon and tooltip of the cyclic search togglebutton according to its state</li>
+          <li>Focus correct tab after clicking on a process finished notification</li>
+          <li>Check for "doas", "pkexec", "run0", and "su" as well as "sudo" when text pasted into terminal</li>
+          <li>Check for unsafe paste on dropping text as well</li>
+          <li>Check for multiline commands in unsafe paste detection</li>
+          <li>Improve gray contrast in dark theme</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/814">New window created with Ctrl Shift N has zero tabs and is transparent</issue>
+        <issue url="https://github.com/elementary/terminal/issues/812">Notifications are not withdrawn</issue>
+        <issue url="https://github.com/elementary/terminal/issues/806">Fails to build in Launchpad due to tests</issue>
+        <issue url="https://github.com/elementary/terminal/issues/793">Drag-drop command bypasses sudo warning</issue>
+        <issue url="https://github.com/elementary/terminal/issues/682">Color issue in new version of Terminal</issue>
+        <issue url="https://github.com/elementary/terminal/issues/442">Show percentage while zooming in with Ctrl+Scroll</issue>
+        <issue url="https://github.com/elementary/terminal/issues/181">Support clearing the screen mid process (Reset + Clear)</issue>
+        <issue url="https://github.com/elementary/terminal/issues/73">Open relevant tab when clicking on a task finished notification</issue>
+      </issues>
+    </release>
+
+    <release version="6.2.0" date="2024-07-18" urgency="medium">
+      <description translate="no">
+        <p>New features:</p>
+        <ul>
+          <li>Allow switching event alerts on and off in the app menu</li>
+          <li>Save tabs and zooms to the saved state settings when they change</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Document missing options in the man page</li>
+          <li>Suppress unwanted default tab when opening a new window</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/596">No terminal bell any more</issue>
+        <issue url="https://github.com/elementary/terminal/issues/728">Incomplete man page</issue>
+        <issue url="https://github.com/elementary/terminal/issues/736">When creating a new terminal window at a apecified working directory, an additional default tab is also opened</issue>
+        <issue url="https://github.com/elementary/terminal/issues/741">Tabs and tab-zooms not saved to settings continuously</issue>
+        <issue url="https://github.com/elementary/terminal/issues/752">The F11 shortcut key causes the maximize/unmaximize button to fail</issue>
+      </issues>
+    </release>
+
+    <release version="6.1.2" date="2023-04-03" urgency="medium">
+      <description translate="no">
+        <p>Other updates:</p>
+        <ul>
+          <li>Add shortcuts "Ctrl + PageUp" and "Ctrl + PageDown" to switch between tabs</li>
+          <li>Properly unexport the DBus Interface on Exit</li>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/625">Some characters are incorrectly escaped in links in Terminal</issue>
+        <issue url="https://github.com/elementary/terminal/issues/676">Keybinds for micro text editor do not work</issue>
+        <issue url="https://github.com/elementary/terminal/issues/681">Option to start minimized</issue>
+        <issue url="https://github.com/elementary/terminal/issues/696">Pressing the menu key doesn't refresh the context menu</issue>
+      </issues>
+    </release>
+
+    <release version="6.1.1" date="2022-10-26" urgency="medium">
+      <description translate="no">
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/terminal/issues/689">Notification displays timestamp when HISTTIMEFORMAT is set</issue>
+      </issues>
+    </release>
+
+    <release version="6.1.0" date="2022-08-11" urgency="medium">
+      <description translate="no">
+        <p>New features:</p>
+        <ul>
+          <li>Option to follow system dark style preference</li>
+          <li>Create a custom color palette</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Default styles are fully opaque and updated to the latest upstream values from Solarized for improved legibility</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+          <li>Performance improvements</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="6.0.2" date="2022-05-16" urgency="medium">
+      <description translate="no">
+        <p>New features:</p>
+        <ul>
+          <li>Switch tabs with Alt + 1-9</li>
+          <li>Quit with Ctrl + Shift + Q</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Fix build on OS 7</li>
+        </ul>
+        <p>Other updates:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="6.0.1" date="2021-12-13"/>
+    <release version="6.0.0" date="2020-06-15"/>
+    <release version="5.5.2" date="2020-04-01"/>
+    <release version="5.5.1" date="2020-01-11"/>
+    <release version="5.5.0" date="2020-01-02"/>
+    <release version="5.4.0" date="2019-11-15"/>
+    <release version="5.3.6" date="2019-07-15"/>
+    <release version="5.3.5" date="2019-06-04"/>
+    <release version="5.3.4" date="2019-03-29"/>
+    <release version="5.3.3" date="2018-12-06"/>
+    <release version="5.3.2" date="2018-10-30"/>
+    <release version="5.3.1" date="2018-10-16"/>
+    <release version="0.5.3" date="2018-09-06"/>
+    <release version="0.5.2" date="2018-08-22"/>
+    <release version="0.5.1" date="2018-07-23"/>
+    <release version="0.5.0" date="2018-06-19"/>
+    <release version="0.4.3" date="2017-07-22"/>
+    <release version="0.4.2" date="2017-05-15"/>
+    <release version="0.4.1" date="2017-05-06"/>
+    <release version="0.4.0.3" date="2017-01-04"/>
+    <release version="0.4.0.2" date="2016-10-30"/>
+    <release version="0.4.0.1" date="2016-10-30"/>
+  </releases>
+</component>

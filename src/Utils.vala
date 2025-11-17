@@ -18,17 +18,22 @@
 
 
 namespace Terminal.Utils {
-    public string? sanitize_path (string _path, string shell_location) {
+    public string? sanitize_path (string _path, string shell_location, bool add_file_scheme = true) {
         /* Remove trailing whitespace, ensure scheme, substitute leading "~" and "..", remove extraneous "/" */
-        string scheme, path;
-
+        string scheme = "", path = "";
         var parts_scheme = _path.split ("://", 2);
         if (parts_scheme.length == 2) {
             scheme = parts_scheme[0] + "://";
             path = parts_scheme[1];
-        } else {
-            scheme = "file://";
+        } else if (parts_scheme.length == 1 ) {
+            if (add_file_scheme) {
+                scheme = "file://";
+            }
+
             path = _path;
+        } else {
+            critical ("Invalid path");
+            return null;
         }
 
         path = Uri.unescape_string (path);
@@ -42,6 +47,11 @@ namespace Terminal.Utils {
             path = path.replace ("//", "/");
 
         } while (path.contains ("//"));
+
+        // If just basename of file then assume in current shell location
+        if (!path.contains (Path.DIR_SEPARATOR_S)) {
+            path = string.join (Path.DIR_SEPARATOR_S, ".", path);
+        }
 
         var parts_sep = path.split (Path.DIR_SEPARATOR_S, 3);
         var index = 0;
@@ -57,7 +67,7 @@ namespace Terminal.Utils {
             parts_sep[index] = construct_parent_path (shell_location);
         }
 
-        var result = escape_uri (scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/"));
+        var result = scheme + string.joinv (Path.DIR_SEPARATOR_S, parts_sep).replace ("//", "/");
         return result;
     }
 
@@ -115,15 +125,112 @@ namespace Terminal.Utils {
         return uri;
     }
 
-    private string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
-        string rc = (Uri.RESERVED_CHARS_GENERIC_DELIMITERS +
-                     Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS).replace ("#", "").replace ("*", "").replace ("~", "");
+    /**
+     * Checks a string for possible unsafe contents before pasting
+     *
+     * @param clipboard contents containing terminal commands
+     *
+     * @param return localized explanation of risk
+     *
+     * @return true if safe, false if unsafe.
+     */
+    public bool is_safe_paste (string text, out string[]? msg_array) {
+        string[] msgs = {};
+        var newline_index = text.index_of ("\n"); // First occurrence of new line
+        bool embedded_newline = newline_index >= 0 && newline_index < text.length - 1;
+        if (embedded_newline || "&" in text || "|" in text || ";" in text ) {
+            msgs += _("The pasted text may contain multiple commands");
+        }
+
+        if ("sudo " in text || "doas " in text || "run0 " in text || "pkexec " in text || "su " in text) {
+            msgs += _("The pasted text may be trying to gain administrative access");
+        }
+
+        string[] skip_commands = {
+            "--assume-yes",
+            "-f",
+            "--force",
+            "--interactive=never",
+            "-y",
+            "--yes"
+        };
+
+        var words = text.split (" ");
+        foreach (unowned var skip_command in skip_commands) {
+            if (skip_command in words) {
+                msgs += _("The pasted text includes a command to skip warnings and confirmations");
+                break;
+            }
+        }
+
+        if (msgs.length > 0) {
+            msg_array = msgs;
+            return false;
+        } else {
+            msg_array = null;
+            return true;
+        }
+    }
+
+    public string? escape_uri (string uri, bool allow_utf8 = true, bool allow_single_quote = true) {
+        // We only want to allow '#' in appropriate position for fragment identifier, i.e. after the last directory separator.
+        var placeholder = "::::::";
+        var parts = uri.split (Path.DIR_SEPARATOR_S);
+        parts[parts.length - 1] = parts[parts.length - 1].replace ("#", placeholder);
+        var uri_to_escape = string.joinv (Path.DIR_SEPARATOR_S, parts);
+        string rc = ((Uri.RESERVED_CHARS_GENERIC_DELIMITERS + Uri.RESERVED_CHARS_SUBCOMPONENT_DELIMITERS))
+                    .replace ("#", "")
+                    .replace ("*", "")
+                    .replace ("~", "");
 
         if (!allow_single_quote) {
             rc = rc.replace ("'", "");
         }
 
-        return Uri.escape_string ((Uri.unescape_string (uri) ?? uri), rc , allow_utf8);
+        //Escape and then replace fragment identifier
+        return Uri.escape_string (
+            (Uri.unescape_string (uri_to_escape) ?? uri_to_escape),
+            rc ,
+            allow_utf8
+        ).replace (placeholder, "#");
     }
 
+    public SimpleAction action_from_group (string action_name, SimpleActionGroup action_group) {
+        return ((SimpleAction) action_group.lookup_action (action_name));
+    }
+
+    public bool valid_local_uri (string s, out string path) {
+        var scheme = Uri.peek_scheme (s);
+        path = "";
+        string absolute_uri;
+        if (scheme == null || scheme == "") {
+            absolute_uri = "file:///" + s;
+        } else if (scheme != "file") {
+            return false;
+        } else {
+            absolute_uri = s;
+        }
+
+        try {
+            if (!Uri.is_valid (absolute_uri, PARSE_RELAXED)) {
+                return false;
+            }
+
+            var file = GLib.File.new_for_uri (absolute_uri);
+            var type = file.query_file_type (NONE);
+            if (type == DIRECTORY) {
+                path = file.get_path ();
+            } else if (type == REGULAR) {
+                path = file.get_parent ().get_path ();
+            } else {
+                return false;
+            }
+
+            return true;
+        } catch (Error e) {
+            warning ("Error parsing uri - %s", e.message);
+        }
+
+        return false;
+    }
 }

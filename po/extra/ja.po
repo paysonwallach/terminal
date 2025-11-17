@@ -7,264 +7,210 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
-"PO-Revision-Date: 2021-04-09 15:50+0000\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2025-10-25 08:49+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/terminal/extra/"
-"ja/>\n"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/terminal/"
+"extra/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-02-11 05:36+0000\n"
 
-#: data/io.elementary.terminal.appdata.xml.in:8
-#: data/io.elementary.terminal.desktop.in:3
+#: data/terminal.metainfo.xml.in:10 data/io.elementary.terminal.desktop.in:3
 #: data/io.elementary.terminal.desktop.in:4
 msgid "Terminal"
 msgstr "ターミナル"
 
-#: data/io.elementary.terminal.appdata.xml.in:9
-#: data/io.elementary.terminal.desktop.in:5
+#: data/terminal.metainfo.xml.in:11 data/io.elementary.terminal.desktop.in:5
 msgid "Use the command line"
 msgstr "コマンドラインを使用します"
 
-#: data/io.elementary.terminal.appdata.xml.in:11
+#: data/terminal.metainfo.xml.in:13
 msgid ""
 "Terminal is a terminal emulator application for accessing a UNIX shell "
 "environment which can be used to run programs available on your system."
 msgstr ""
-"\"ターミナル\" は、システム上のプログラムを実行するのに使用される UNIX のシェ"
-"ル環境にアクセスするための端末エミュレータアプリケーションです。"
+"“ターミナル”は、システム上のプログラムを実行するのに使用される UNIX のシェル"
+"環境にアクセスするための端末エミュレータアプリケーションです。"
 
-#: data/io.elementary.terminal.appdata.xml.in:40
-#: data/io.elementary.terminal.appdata.xml.in:55
-#: data/io.elementary.terminal.appdata.xml.in:68
-#: data/io.elementary.terminal.appdata.xml.in:83
-msgid "New features:"
-msgstr "新機能:"
-
-#: data/io.elementary.terminal.appdata.xml.in:42
-msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
-msgstr "タブを Ctrl + Alt + ←/→ で移動できるように変更"
-
-#: data/io.elementary.terminal.appdata.xml.in:43
-msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
-msgstr "タブを Ctrl + Tab / Ctrl + Shift + Tab で切り替えられるように変更"
-
-#: data/io.elementary.terminal.appdata.xml.in:44
-msgid "Zoom levels are now remembered per-tab"
-msgstr "タブごとに拡大率が記録されるように変更"
-
-#: data/io.elementary.terminal.appdata.xml.in:46
-#: data/io.elementary.terminal.appdata.xml.in:59
-#: data/io.elementary.terminal.appdata.xml.in:73
-#: data/io.elementary.terminal.appdata.xml.in:88
+#: data/terminal.metainfo.xml.in:59 data/terminal.metainfo.xml.in:74
+#: data/terminal.metainfo.xml.in:86 data/terminal.metainfo.xml.in:105
+#: data/terminal.metainfo.xml.in:123 data/terminal.metainfo.xml.in:136
+#: data/terminal.metainfo.xml.in:159 data/terminal.metainfo.xml.in:189
+#: data/terminal.metainfo.xml.in:207 data/terminal.metainfo.xml.in:224
+#: data/terminal.metainfo.xml.in:245 data/terminal.metainfo.xml.in:264
 msgid "Other updates:"
-msgstr "そのほかのアップデート:"
+msgstr "その他のアップデート:"
 
-#: data/io.elementary.terminal.appdata.xml.in:48
-msgid "Validate custom palette"
-msgstr "Dconf エディターで設定されたテーマカラーを正しく復元するように修正"
+#: data/terminal.metainfo.xml.in:61
+msgid ""
+"The option to hide the tabbar when there is only one tab is now exposed and "
+"honored"
+msgstr "タブが 1 つのみの場合にタブバーを非表示にするオプションを UI "
+"に追加し、アプリに設定が反映されるように修正"
 
-#: data/io.elementary.terminal.appdata.xml.in:49
-#: data/io.elementary.terminal.appdata.xml.in:62
-#: data/io.elementary.terminal.appdata.xml.in:77
-#: data/io.elementary.terminal.appdata.xml.in:92
-#: data/io.elementary.terminal.appdata.xml.in:105
-#: data/io.elementary.terminal.appdata.xml.in:114
-#: data/io.elementary.terminal.appdata.xml.in:123
-#: data/io.elementary.terminal.appdata.xml.in:133
-#: data/io.elementary.terminal.appdata.xml.in:146
-#: data/io.elementary.terminal.appdata.xml.in:156
-#: data/io.elementary.terminal.appdata.xml.in:164
-#: data/io.elementary.terminal.appdata.xml.in:172
-#: data/io.elementary.terminal.appdata.xml.in:180
-#: data/io.elementary.terminal.appdata.xml.in:188
-#: data/io.elementary.terminal.appdata.xml.in:199
-#: data/io.elementary.terminal.appdata.xml.in:207
-#: data/io.elementary.terminal.appdata.xml.in:216
-#: data/io.elementary.terminal.appdata.xml.in:225
-#: data/io.elementary.terminal.appdata.xml.in:233
-#: data/io.elementary.terminal.appdata.xml.in:248
+#: data/terminal.metainfo.xml.in:62 data/terminal.metainfo.xml.in:76
+#: data/terminal.metainfo.xml.in:88 data/terminal.metainfo.xml.in:108
+#: data/terminal.metainfo.xml.in:125 data/terminal.metainfo.xml.in:140
+#: data/terminal.metainfo.xml.in:167 data/terminal.metainfo.xml.in:193
+#: data/terminal.metainfo.xml.in:211 data/terminal.metainfo.xml.in:226
+#: data/terminal.metainfo.xml.in:247 data/terminal.metainfo.xml.in:266
 msgid "Translation updates"
 msgstr "翻訳の更新"
 
-#: data/io.elementary.terminal.appdata.xml.in:57
-msgid "Add commandline option for New Tab (-t)"
-msgstr "新しいタブを開くコマンドラインオプション (-t) を追加"
+#: data/terminal.metainfo.xml.in:100 data/terminal.metainfo.xml.in:153
+#: data/terminal.metainfo.xml.in:184 data/terminal.metainfo.xml.in:236
+#: data/terminal.metainfo.xml.in:255
+msgid "New features:"
+msgstr "新機能:"
 
-#: data/io.elementary.terminal.appdata.xml.in:61
-msgid "Fix URL selection"
-msgstr "一部の URL がクリックできない不具合を修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:70
-msgid "Add commandline option for \"Show version\" (-v, --version)"
-msgstr "\"バージョンを表示\" コマンドラインオプション (-v, --version) を追加"
-
-#: data/io.elementary.terminal.appdata.xml.in:71
-msgid "Add commandline option for New Window (-n)"
-msgstr "新しいウィンドウを開くコマンドラインオプション (-n) を追加"
-
-#: data/io.elementary.terminal.appdata.xml.in:75
-msgid "Prevent duplicate tab on startup"
-msgstr "起動時に同じタブが複数開く不具合を修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:76
-msgid "Prevent unnecessary Home tab on startup"
-msgstr "起動時にホームタブも開かれてしまう不具合を修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:85
-msgid "Turn Natural Copy/Paste on or off in the Settings menu"
-msgstr "設定メニューでナチュラルコピー & ペーストの設定を変更できるように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:86
-msgid "Zoom with Ctrl + Scroll"
-msgstr "Ctrl + スクロールでの拡大・縮小に対応"
-
-#: data/io.elementary.terminal.appdata.xml.in:90
-msgid "Include sudo password prompt when copying last output"
-msgstr "最後の出力のコピーに sudo パスワードの確認が含まれるように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:91
-msgid "Apply font changes without restarting"
-msgstr "再起動しなくてもフォントの変更が反映されるように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:99
-msgid "Don't remember tabs when History is disabled in System Settings"
-msgstr "システム設定で履歴記録の設定が無効の場合はタブを記録しないように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:100
-msgid "Show keyboard shortcuts in the secondary-click menu"
-msgstr "コンテキストメニューにキーボードショートカットを表示するように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:101
-msgid "Middle-click paste now properly follows System Settings"
-msgstr "システム設定の中クリックによる貼り付けの設定を利用するように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:102
-msgid "Shift + Control + D to duplicate tabs"
-msgstr "Shift + Control + D でタブを複製するように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:103
-msgid "Use neutral colors for the dark style scheme"
-msgstr "ダークテーマに無彩色を使うように変更"
-
-#: data/io.elementary.terminal.appdata.xml.in:104
-msgid "Slightly pad text from the edge of the window"
-msgstr "テキストをウィンドウの端から少し離して表示するように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:112
-msgid "Pressing the Menu key now opens the context menu"
-msgstr "メニューキーをクリックした際にコンテキストメニューを表示するように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:113
-msgid "Store state with GSettings"
-msgstr "GSettings を使用して状態を保存するように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:121
-msgid "Support Ctrl+Equal key combo to zoom in"
-msgstr "Ctrl+イコールキーでの拡大に対応"
-
-#: data/io.elementary.terminal.appdata.xml.in:122
-msgid "Fix a wrong foreground process response code"
+#: data/terminal.metainfo.xml.in:102
+msgid ""
+"A warning is now given if a pasted command has an option that skips "
+"confirmations"
 msgstr ""
-"フォアグラウンド処理のレスポンスに関するコードが間違っていた不具合を修正"
+"貼り付けられたコマンドに確認をスキップするオプションが含まれていた場合、警告"
+"を表示する機能を追加"
 
-#: data/io.elementary.terminal.appdata.xml.in:130
-msgid "Return focus after popover menu closes"
-msgstr "ポップオーバーメニューが閉じたあとにフォーカスを復元するように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:131
-msgid "Prevent search and style buttons from receiving focus"
-msgstr "検索ボタンとスタイルボタンにフォーカスが移動しないように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:132
-msgid "Hide the cursor while typing"
-msgstr "入力中にカーソルを表示しないように修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:140
-msgid "Fix erratic search text highlightning behavior"
-msgstr "一般的ではない検索テキストのハイライト動作を修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:141
-msgid "Support -h flag for help"
-msgstr "-h フラグでのヘルプの表示に対応"
-
-#: data/io.elementary.terminal.appdata.xml.in:142
-msgid "Disable audible bell"
-msgstr "デフォルトで音声ベルを無効化"
-
-#: data/io.elementary.terminal.appdata.xml.in:143
-msgid "Add Alt+↑ action to scroll to last command"
-msgstr "Alt+↑ で最後のコマンドにスクロールするアクションを追加"
-
-#: data/io.elementary.terminal.appdata.xml.in:144
-msgid "Add Alt+c action to copy last output"
-msgstr "Alt+c で最後の出力をコピーするアクションを追加"
-
-#: data/io.elementary.terminal.appdata.xml.in:145
-msgid "Add accels to tooltips"
-msgstr "ツールチップにアクセラレーターを追加"
-
-#: data/io.elementary.terminal.appdata.xml.in:153
-msgid "Fix zsh notifications"
-msgstr "Zsh の通知を修正"
-
-#: data/io.elementary.terminal.appdata.xml.in:154
-msgid "Conditional ctrl+g shortcut to deconflict with emacs"
+#: data/terminal.metainfo.xml.in:103
+msgid ""
+"When a foreground process is launched, the tab label changes to the name of "
+"that process"
 msgstr ""
-"Emacs 使用時はコンフリクトを避けるために ctrl+g ショートカットを無効化するよ"
-"うに修正"
+"フォアグラウンドプロセスが起動した場合、タブのラベルをそのプロセス名に変更す"
+"るように修正"
 
-#: data/io.elementary.terminal.appdata.xml.in:155
-#: data/io.elementary.terminal.appdata.xml.in:163
-#: data/io.elementary.terminal.appdata.xml.in:171
-#: data/io.elementary.terminal.appdata.xml.in:179
-#: data/io.elementary.terminal.appdata.xml.in:187
-#: data/io.elementary.terminal.appdata.xml.in:198
-#: data/io.elementary.terminal.appdata.xml.in:206
-#: data/io.elementary.terminal.appdata.xml.in:215
-#: data/io.elementary.terminal.appdata.xml.in:224
-#: data/io.elementary.terminal.appdata.xml.in:232
-#: data/io.elementary.terminal.appdata.xml.in:247
-msgid "Minor bug fixes"
-msgstr "軽微なバグの修正"
+#: data/terminal.metainfo.xml.in:107
+msgid "Exiting the shell in a tab now closes that tab"
+msgstr "タブで開いていたシェルが終了してもタブが閉じない不具合を修正"
 
-#: data/io.elementary.terminal.appdata.xml.in:195
-msgid "FISH integration fixes"
-msgstr "fish との統合の修正"
+#: data/terminal.metainfo.xml.in:138
+msgid "Stop window size increasing when opened"
+msgstr "ウィンドウが開くたびに大きくなる不具合を修正"
 
-#: data/io.elementary.terminal.appdata.xml.in:196
-msgid "Theme preference menu"
-msgstr "テーマ設定メニューを追加"
+#: data/terminal.metainfo.xml.in:139
+msgid "Change hotkeys for Reset and Clear Screen actions"
+msgstr "“リセット”と“画面を消去”アクションのホットキーを変更"
 
-#: data/io.elementary.terminal.appdata.xml.in:197
-msgid "Zoom level controls"
-msgstr "拡大レベルのコントロールを追加"
+#: data/terminal.metainfo.xml.in:155
+msgid "Show zoom level in overlay when zooming"
+msgstr "拡大/縮小中に拡大率をオーバーレイ表示する機能を追加"
 
-#: data/io.elementary.terminal.appdata.xml.in:214
-msgid "Allow tab to close after typing exit at the commandline"
-msgstr "コマンドラインで \"exit\" の入力後にタブを閉じられるように修正"
+#: data/terminal.metainfo.xml.in:156
+msgid "Implement Clear and Reset context menu actions with accelerators"
+msgstr ""
+"“画面を消去”と“リセット”を、ショートカットキー付きのコンテキストメニューアク"
+"ションとして実装"
 
-#: data/io.elementary.terminal.appdata.xml.in:223
-msgid "Fix copying URLs to clipboard"
-msgstr "クリップボードへ URL のコピーする際の不具合を修正"
+#: data/terminal.metainfo.xml.in:157
+msgid "Add toggle for unsafe paste warning to application menu"
+msgstr ""
+"安全でない貼り付け警告の有効/無効を切り替えるスイッチをアプリケーションメ"
+"ニューに追加"
 
-#: data/io.elementary.terminal.appdata.xml.in:240
-msgid "Fix appstream date format"
-msgstr "AppStream データ形式を修正"
+#: data/terminal.metainfo.xml.in:161
+msgid ""
+"Update the icon and tooltip of the cyclic search togglebutton according to "
+"its state"
+msgstr ""
+"循環検索のトグルボタンのアイコンとツールチップをボタンの状態に応じて更新する"
+"ように修正"
 
-#: data/io.elementary.terminal.appdata.xml.in:282
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
+#: data/terminal.metainfo.xml.in:162
+msgid "Focus correct tab after clicking on a process finished notification"
+msgstr "プロセス完了通知をクリックした際、適切なタブにフォーカスするように修正"
 
-#. TRANSLATORS: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/io.elementary.terminal.desktop.in:9
-msgid "utilities-terminal"
-msgstr "utilities-terminal"
+#: data/terminal.metainfo.xml.in:163
+msgid ""
+"Check for \"doas\", \"pkexec\", \"run0\", and \"su\" as well as \"sudo\" "
+"when text pasted into terminal"
+msgstr ""
+"ターミナルにテキストを貼り付ける際、\"sudo\" に加えて \"doas\"、\"pkexec\"、"
+"\"run0\"、\"su\" も警告対象として確認するように修正"
+
+#: data/terminal.metainfo.xml.in:164
+msgid "Check for unsafe paste on dropping text as well"
+msgstr ""
+"テキストをドラッグ & ドロップした際も、安全でない貼り付け確認を実施するように"
+"修正"
+
+#: data/terminal.metainfo.xml.in:165
+msgid "Check for multiline commands in unsafe paste detection"
+msgstr "安全でない貼り付け検出で複数行コマンドも確認するように修正"
+
+#: data/terminal.metainfo.xml.in:166
+msgid "Improve gray contrast in dark theme"
+msgstr "ダークテーマでの灰色のコントラストを改善"
+
+#: data/terminal.metainfo.xml.in:186
+msgid "Allow switching event alerts on and off in the app menu"
+msgstr "アプリメニューからイベント警告のオン/オフを切り替えできる機能を追加"
+
+#: data/terminal.metainfo.xml.in:187
+msgid "Save tabs and zooms to the saved state settings when they change"
+msgstr "タブと拡大率の変更時、保存状態の設定に保存するように変更"
+
+#: data/terminal.metainfo.xml.in:191
+msgid "Document missing options in the man page"
+msgstr "man ページに記載が漏れていたオプションを追記"
+
+#: data/terminal.metainfo.xml.in:192
+msgid "Suppress unwanted default tab when opening a new window"
+msgstr ""
+"新しいウィンドウを開いた場合に、不要なデフォルトのタブが表示されないように修"
+"正"
+
+#: data/terminal.metainfo.xml.in:209
+msgid ""
+"Add shortcuts \"Ctrl + PageUp\" and \"Ctrl + PageDown\" to switch between "
+"tabs"
+msgstr ""
+"タブの切り替えに \"Ctrl + PageUp\" と \"Ctrl + PageDown\" を使用できるように"
+"変更"
+
+#: data/terminal.metainfo.xml.in:210
+msgid "Properly unexport the DBus Interface on Exit"
+msgstr "終了時に DBus インターフェースを適切に削除するよう修正"
+
+#: data/terminal.metainfo.xml.in:238
+msgid "Option to follow system dark style preference"
+msgstr "システムのダークモード設定に従うオプションを追加"
+
+#: data/terminal.metainfo.xml.in:239
+msgid "Create a custom color palette"
+msgstr "カスタムカラーパレットを作成する機能を追加"
+
+#: data/terminal.metainfo.xml.in:241 data/terminal.metainfo.xml.in:260
+msgid "Fixes:"
+msgstr "修正点:"
+
+#: data/terminal.metainfo.xml.in:243
+msgid ""
+"Default styles are fully opaque and updated to the latest upstream values "
+"from Solarized for improved legibility"
+msgstr ""
+"デフォルトのスタイルが、完全に不透明になり、さらに最新の Solarized のカラー"
+"コードに更新されたことで、可読性が向上しました"
+
+#: data/terminal.metainfo.xml.in:248
+msgid "Performance improvements"
+msgstr "パフォーマンスの改善"
+
+#: data/terminal.metainfo.xml.in:257
+msgid "Switch tabs with Alt + 1-9"
+msgstr "Alt + 1〜9 キーでタブを切り替え可能に"
+
+#: data/terminal.metainfo.xml.in:258
+msgid "Quit with Ctrl + Shift + Q"
+msgstr "Ctrl + Shift + Q キーで終了可能に"
+
+#: data/terminal.metainfo.xml.in:262
+msgid "Fix build on OS 7"
+msgstr "elementary OS 7 上でのビルドを修正"
 
 #: data/io.elementary.terminal.desktop.in:13
 msgid "command;prompt;cmd;commandline;run;"
@@ -278,6 +224,195 @@ msgstr "新しいウィンドウ"
 #: data/io.elementary.terminal.desktop.in:22
 msgid "New Root Tab"
 msgstr "新しい root タブ"
+
+#~ msgid "Properly restore zoom levels for all locales"
+#~ msgstr "ロケールに関わらず、拡大レベルを適切に復元するように修正"
+
+#~ msgid "Use XTerm title for window title if available"
+#~ msgstr ""
+#~ "XTerm のタイトルが利用可能であればウィンドウタイトルに使うように修正"
+
+#~ msgid ""
+#~ "Change \"Reload Tab\" shortcut to Shift + F5 to avoid clash with some "
+#~ "foreground processes"
+#~ msgstr ""
+#~ "フォアグラウンドのプロセスがクラッシュしないように、“タブを再読み込み”の"
+#~ "ショートカットキーを Shift + F5 に変更"
+
+#~ msgid "Change preferred shortcut for \"Reload Tab\" to Shift + Control + R"
+#~ msgstr ""
+#~ "“タブを再読み込み”のデフォルトのショートカットキーを Shift + Ctrl + R に変"
+#~ "更"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
+
+#~ msgid "Move tabs with the shortcut Ctrl + Alt + ←/→"
+#~ msgstr "Ctrl + Alt + ←/→ でタブを移動できるように変更"
+
+#~ msgid "Switch tabs with the shortcuts Ctrl + Tab and Ctrl + Shift + Tab"
+#~ msgstr "Ctrl + Tab / Ctrl + Shift + Tab でタブを切り替えられるように変更"
+
+#~ msgid "Zoom levels are now remembered per-tab"
+#~ msgstr "タブごとに拡大率が記録されるように変更"
+
+#~ msgid "Also warn about multi-line pastes"
+#~ msgstr "複数行あるテキストを貼り付けた場合にも警告する機能を追加"
+
+#~ msgid "Show text details in unsafe paste dialogs"
+#~ msgstr ""
+#~ "貼り付けようとしているテキストの内容を、安全でない貼り付けに関する警告ダイ"
+#~ "アログに表示するように変更"
+
+#~ msgid "Open Link option when secondary clicking"
+#~ msgstr "副クリックしてリンク先を表示できるオプションを追加"
+
+#~ msgid ""
+#~ "Reload tabs in the context menu or with the shortcut Ctrl + Shift + R"
+#~ msgstr ""
+#~ "コンテキストメニューまたは Ctrl + Shift + R でタブを再読み込みできるように"
+#~ "変更"
+
+#~ msgid "Notifications indicate if a process exited with errors or not"
+#~ msgstr "プロセスがエラー終了したか正常終了したかを通知でお知らせ"
+
+#~ msgid "Show keyboard shortcuts in tab context menus"
+#~ msgstr "タブのコンテキストメニューにキーボードショートカットを表示"
+
+#~ msgid ""
+#~ "Fix an issue with keyboard shortcuts not activating the first time "
+#~ "they're pressed"
+#~ msgstr "キーボードショートカットが初回押下時有効にならない不具合を修正"
+
+#~ msgid "Avoid losing focus when closing background tabs"
+#~ msgstr ""
+#~ "バックグラウンドにあるタブを閉じた場合にフォーカス状態が解除される不具合を"
+#~ "修正"
+
+#~ msgid "Validate custom palette"
+#~ msgstr "Dconf エディターで設定されたテーマカラーを正しく復元するように修正"
+
+#~ msgid "Add commandline option for New Tab (-t)"
+#~ msgstr "新しいタブを開くコマンドラインオプション (-t) を追加"
+
+#~ msgid "Fix URL selection"
+#~ msgstr "一部の URL がクリックできない不具合を修正"
+
+#~ msgid "Add commandline option for \"Show version\" (-v, --version)"
+#~ msgstr "\"バージョンを表示\"コマンドラインオプション (-v, --version) を追加"
+
+#~ msgid "Add commandline option for New Window (-n)"
+#~ msgstr "新しいウィンドウを開くコマンドラインオプション (-n) を追加"
+
+#~ msgid "Prevent duplicate tab on startup"
+#~ msgstr "起動時に同じタブが複数開く不具合を修正"
+
+#~ msgid "Prevent unnecessary Home tab on startup"
+#~ msgstr "起動時にホームタブも開かれてしまう不具合を修正"
+
+#~ msgid "Turn Natural Copy/Paste on or off in the Settings menu"
+#~ msgstr ""
+#~ "設定メニューでナチュラルコピー & ペーストの設定を変更できるように修正"
+
+#~ msgid "Zoom with Ctrl + Scroll"
+#~ msgstr "Ctrl + スクロールでの拡大・縮小に対応"
+
+#~ msgid "Include sudo password prompt when copying last output"
+#~ msgstr "最後の出力のコピーに sudo パスワードの確認が含まれるように修正"
+
+#~ msgid "Apply font changes without restarting"
+#~ msgstr "再起動しなくてもフォントの変更が反映されるように修正"
+
+#~ msgid "Don't remember tabs when History is disabled in System Settings"
+#~ msgstr ""
+#~ "システム設定で履歴記録の設定が無効の場合はタブを記録しないように修正"
+
+#~ msgid "Show keyboard shortcuts in the secondary-click menu"
+#~ msgstr "コンテキストメニューにキーボードショートカットを表示するように修正"
+
+#~ msgid "Middle-click paste now properly follows System Settings"
+#~ msgstr "システム設定の中クリックによる貼り付けの設定を利用するように修正"
+
+#~ msgid "Shift + Control + D to duplicate tabs"
+#~ msgstr "Shift + Control + D でタブを複製するように修正"
+
+#~ msgid "Use neutral colors for the dark style scheme"
+#~ msgstr "ダークテーマに無彩色を使うように変更"
+
+#~ msgid "Slightly pad text from the edge of the window"
+#~ msgstr "テキストをウィンドウの端から少し離して表示するように修正"
+
+#~ msgid "Pressing the Menu key now opens the context menu"
+#~ msgstr "メニューキーを押すとコンテキストメニューを表示するように修正"
+
+#~ msgid "Store state with GSettings"
+#~ msgstr "GSettings を使用して状態を保存するように修正"
+
+#~ msgid "Support Ctrl+Equal key combo to zoom in"
+#~ msgstr "Ctrl+イコールキーでの拡大に対応"
+
+#~ msgid "Fix a wrong foreground process response code"
+#~ msgstr ""
+#~ "フォアグラウンド処理のレスポンスに関するコードが間違っていた不具合を修正"
+
+#~ msgid "Return focus after popover menu closes"
+#~ msgstr "ポップオーバーメニューが閉じたあとにフォーカスを復元するように修正"
+
+#~ msgid "Prevent search and style buttons from receiving focus"
+#~ msgstr "検索ボタンとスタイルボタンにフォーカスが移動しないように修正"
+
+#~ msgid "Hide the cursor while typing"
+#~ msgstr "入力中にカーソルを表示しないように修正"
+
+#~ msgid "Fix erratic search text highlightning behavior"
+#~ msgstr "一般的ではない検索テキストのハイライト挙動を修正"
+
+#~ msgid "Support -h flag for help"
+#~ msgstr "-h フラグでのヘルプの表示に対応"
+
+#~ msgid "Disable audible bell"
+#~ msgstr "デフォルトで音声ベルを無効化"
+
+#~ msgid "Add Alt+↑ action to scroll to last command"
+#~ msgstr "Alt+↑ で最後のコマンドにスクロールするアクションを追加"
+
+#~ msgid "Add Alt+c action to copy last output"
+#~ msgstr "Alt+c で最後の出力をコピーするアクションを追加"
+
+#~ msgid "Add accels to tooltips"
+#~ msgstr "ツールチップにアクセラレーターを追加"
+
+#~ msgid "Fix zsh notifications"
+#~ msgstr "zsh の通知を修正"
+
+#~ msgid "Conditional ctrl+g shortcut to deconflict with emacs"
+#~ msgstr ""
+#~ "Emacs 使用時はコンフリクトを避けるために ctrl+g ショートカットを無効化する"
+#~ "ように修正"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "軽微なバグの修正"
+
+#~ msgid "FISH integration fixes"
+#~ msgstr "fish との統合の修正"
+
+#~ msgid "Theme preference menu"
+#~ msgstr "テーマ設定メニューを追加"
+
+#~ msgid "Zoom level controls"
+#~ msgstr "拡大レベルのコントロールを追加"
+
+#~ msgid "Allow tab to close after typing exit at the commandline"
+#~ msgstr "コマンドラインで \"exit\" の入力後にタブを閉じられるように修正"
+
+#~ msgid "Fix copying URLs to clipboard"
+#~ msgstr "クリップボードへ URL のコピーする際の不具合を修正"
+
+#~ msgid "Fix appstream date format"
+#~ msgstr "AppStream データ形式を修正"
+
+#~ msgid "utilities-terminal"
+#~ msgstr "utilities-terminal"
 
 #~ msgid "About Terminal"
 #~ msgstr "ターミナルについて"

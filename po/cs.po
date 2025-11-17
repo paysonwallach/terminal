@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
-"PO-Revision-Date: 2020-05-30 13:11+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2024-09-19 07:22+0000\n"
+"Last-Translator: hnklp <hynek.puta@seznam.cz>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/terminal/terminal/"
 "cs/>\n"
 "Language: cs\n"
@@ -17,194 +17,478 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-02-28 04:59+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Úloha dokončena"
-
-#: src/Application.vala:251
+#: src/Application.vala:52
 msgid "Show version"
 msgstr "Zobrazit verzi"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
-msgid "Run a program in terminal"
-msgstr "Spustit program v terminálu"
-
-#: src/Application.vala:258
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-"Spustit zbytek řádku jako příkaz v terminálu. „--“ také můžete použít jako "
-"příznak"
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
+#. -n flag forces a new window
+#: src/Application.vala:54
 msgid "Open a new terminal window"
 msgstr "Otevřít nové okno terminálu"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
-msgid "Open a new terminal tab"
-msgstr "Otevřít nový panel terminálu"
+#: src/Application.vala:56
+msgid "Open a new terminal tab at current working directory"
+msgstr "Otevřít novou záložku terminálu v pracovním adresáři"
 
-#: src/Application.vala:266
-msgid "Show help"
-msgstr "Zobrazit nápovědu"
-
-#: src/Application.vala:268
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:58
 msgid "Set shell working directory"
 msgstr "Nastavit pracovní adresář shellu"
 
-#: src/MainWindow.vala:214
-msgid "Copy"
-msgstr "Kopírovat"
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:60
+msgid "Run a program in terminal"
+msgstr "Spustit program v terminálu"
 
-#: src/MainWindow.vala:219
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:62
+msgid "Open terminal in a minimized state"
+msgstr "Otevřít terminál minimalizovaný"
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:65
+msgid "Run remainder of line as a command in terminal"
+msgstr "Spustit zbytek řádku jako příkaz v terminálu"
+
+#: src/Application.vala:117
+msgid "[-- COMMAND…]"
+msgstr "[-- PŘÍKAZ…]"
+
+#: src/Application.vala:177
+msgid "Process completed"
+msgstr "Proces dokončen"
+
+#: src/Application.vala:180
+msgid "Process exited with errors"
+msgstr "Proces skončil s chybami"
+
+#: src/MainWindow.vala:155
+msgid "Show Search Bar"
+msgstr "Ukázat lištu vyhledávání"
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:162
+msgid "Copy"
+msgstr "Zkopírovat"
+
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
 msgstr "Kopírovat poslední výstup"
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:174
+msgid "Clear Screen"
+msgstr ""
+
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
+msgid "Reset"
+msgstr ""
+
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Vložit"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Vybrat vše"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Na celou obrazovku"
+
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Najít…"
 
-#: src/MainWindow.vala:364
-msgid "Zoom out"
-msgstr "Oddálit"
+#: src/MainWindow.vala:313
+#, fuzzy
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Nová karta"
 
-#: src/MainWindow.vala:371
-msgid "Default zoom level"
-msgstr "Výchozí úroveň přiblížení"
+#: src/MainWindow.vala:325
+msgid "Settings"
+msgstr "Nastavení"
 
-#: src/MainWindow.vala:378
-msgid "Zoom in"
-msgstr "Přiblížit"
+#: src/MainWindow.vala:374
+msgid "Are you sure you want to close this tab?"
+msgstr "Opravdu chcete zavřít tuto kartu?"
 
-#: src/MainWindow.vala:394
-msgid "High Contrast"
-msgstr "Vysoký kontrast"
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
+msgid "Close Tab"
+msgstr "Zavřít kartu"
 
-#: src/MainWindow.vala:402
-msgid "Solarized Light"
-msgstr "Solarizovaný světlý"
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:576
+#, c-format
+msgid "Show in %s"
+msgstr "Zobrazit v %s"
 
-#: src/MainWindow.vala:410
+#: src/MainWindow.vala:578
+msgid "Default application"
+msgstr "Výchozí aplikace"
+
+#: src/MainWindow.vala:891
+msgid "Are you sure you want to quit Terminal?"
+msgstr "Opravdu chcete ukončit Terminál?"
+
+#: src/MainWindow.vala:892
+msgid "Quit Terminal"
+msgstr "Ukončit Terminál"
+
+#: src/MainWindow.vala:1039
+msgid "Hide find bar"
+msgstr "Skrýt panel vyhledávání"
+
+#: src/Utils.vala:142
+msgid "The pasted text may contain multiple commands"
+msgstr "Vložený text může obsahovat vícero příkazů"
+
+#: src/Utils.vala:146
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Vložený text se může pokoušet získat práva správce systému"
+
+#: src/Utils.vala:161
+msgid "The pasted text includes a command to skip warnings and confirmations"
+msgstr ""
+
+#: src/Dialogs/ColorPreferencesDialog.vala:37
+msgid "Color Preferences"
+msgstr "Nastavení barev"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:39
+msgid "Window style:"
+msgstr "Styl okna:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:46
+msgid "Light"
+msgstr "Světlý"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:47
+#: src/Widgets/SettingsPopover.vala:78
 msgid "Dark"
 msgstr "Tmavý"
 
-#: src/MainWindow.vala:425
+#: src/Dialogs/ColorPreferencesDialog.vala:51
+msgid "Color Palette"
+msgstr "Paleta barev"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:61
+msgid "Reset to default"
+msgstr "Vrátit výchozí nastavení"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:64
+msgid "Black:"
+msgstr "Černá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:65
+msgid "Red:"
+msgstr "Červená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:66
+msgid "Green:"
+msgstr "Zelená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:67
+msgid "Yellow:"
+msgstr "Žlutá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:68
+msgid "Blue:"
+msgstr "Modrá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:69
+msgid "Magenta:"
+msgstr "Fuchsiová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:70
+msgid "Cyan:"
+msgstr "Cyanová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:71
+msgid "Gray:"
+msgstr "Šedá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "White:"
+msgstr "Bílá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:73
+msgid "Light Red:"
+msgstr "Světle červená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:74
+msgid "Light Green:"
+msgstr "Světle zelená:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Light Yellow:"
+msgstr "Světle žlutá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Light Blue:"
+msgstr "Světle modrá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Light Magenta:"
+msgstr "Světle fuchsiová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Light Cyan:"
+msgstr "Světle cyanová:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Light Gray:"
+msgstr "Světle šedá:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Background:"
+msgstr "Pozadí:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Foreground:"
+msgstr "Popředí:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Cursor:"
+msgstr "Kurzor:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:179
+msgid "Close"
+msgstr "Zavřít"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:299
+msgid "Contrast is very low"
+msgstr "Kontrast je velmi nízký"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:302
+msgid "Contrast is low"
+msgstr "Kontrast je nízký"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:305
+msgid "Contrast is good"
+msgstr "Kontrast je dobrý"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is high"
+msgstr "Kontrast je vysoký"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:23
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
+msgid ""
+"There is an active process on this tab. If you continue, the process will "
+"end."
+msgstr ""
+"V této kartě je spuštěný aktivní proces. Pokud ji znovu načtete, proces bude "
+"ukončen."
+
+#: src/Dialogs/UnsafePasteDialog.vala:22
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Vkládání odněkud zkopírovaných příkazů do terminálu může být nebezpečné. Než "
+"budete pokračovat ujistěte se, že rozumíte všem částem vkládaného textu."
+
+#: src/Dialogs/UnsafePasteDialog.vala:25
+msgid "Show paste protection warnings"
+msgstr "Zobrazovat varování o vkládání"
+
+#: src/Dialogs/UnsafePasteDialog.vala:30
+msgid "Don't Paste"
+msgstr "Nevkládat"
+
+#: src/Dialogs/UnsafePasteDialog.vala:32
+msgid "Paste Anyway"
+msgstr "Přesto vložit"
+
+#: src/Widgets/SearchToolbar.vala:20
+msgid "Find"
+msgstr "Hledat"
+
+#: src/Widgets/SearchToolbar.vala:27
+msgid "Previous result"
+msgstr "Předchozí výsledek"
+
+#: src/Widgets/SearchToolbar.vala:35
+msgid "Next result"
+msgstr "Další výsledek"
+
+#: src/Widgets/SearchToolbar.vala:46
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
+msgstr "Opakované hledání"
+
+#: src/Widgets/SearchToolbar.vala:49
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
+msgstr "Opakované hledání"
+
+#: src/Widgets/SettingsPopover.vala:31
+msgid "Zoom out"
+msgstr "Oddálit"
+
+#: src/Widgets/SettingsPopover.vala:39
+msgid "Default zoom level"
+msgstr "Výchozí úroveň přiblížení"
+
+#: src/Widgets/SettingsPopover.vala:47
+msgid "Zoom in"
+msgstr "Přiblížit"
+
+#: src/Widgets/SettingsPopover.vala:65
+msgid "Follow System Style"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:70
+msgid "High Contrast"
+msgstr "Vysoký kontrast"
+
+#: src/Widgets/SettingsPopover.vala:74
+msgid "Solarized Light"
+msgstr "Solarizovaný světlý"
+
+#: src/Widgets/SettingsPopover.vala:82
+msgid "Custom"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:103
 msgid "Natural Copy/Paste"
 msgstr "Přirozené kopírování/vkládání"
 
-#: src/MainWindow.vala:426
+#: src/Widgets/SettingsPopover.vala:104
 msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
 msgstr ""
 "Klávesové zkratky nevyžadují použití Shift; může kolidovat s aplikacemi v "
 "příkazovém řádku"
 
-#: src/MainWindow.vala:450
-msgid "Settings"
-msgstr "Nastavení"
-
-#: src/MainWindow.vala:845
-#, fuzzy, c-format
-#| msgid "Show version"
-msgid "Show in %s"
-msgstr "Zobrazit verzi"
-
-#: src/MainWindow.vala:846
-msgid "Default application"
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Unsafe Paste Alert"
 msgstr ""
 
-#: src/MainWindow.vala:1357
-msgid "Hide find bar"
-msgstr "Skrýt panel vyhledávání"
+#: src/Widgets/SettingsPopover.vala:109
+#, fuzzy
+#| msgid "The pasted text may contain multiple commands"
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "Vložený text může obsahovat vícero příkazů"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:26
-msgid "Are you sure you want to close this tab?"
-msgstr "Opravdu chcete zavřít tuto kartu?"
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Event Alerts"
+msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "V této kartě je spuštěný proces."
+#: src/Widgets/SettingsPopover.vala:114
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Pokud ji zavřete, proces bude ukončen."
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
 
-#: src/Dialogs/ForegroundProcessDialog.vala:31
-msgid "Close Tab"
-msgstr "Zavřít kartu"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:38
-msgid "Are you sure you want to quit Terminal?"
-msgstr "Opravdu chcete ukončit Terminál?"
-
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "V tomto okně terminálu běží aktivní proces."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Pokud ukončíte Terminál, proces bude ukončen."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
-msgid "Quit Terminal"
-msgstr "Ukončit Terminál"
-
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Tento příkaz vyžaduje administrátorské oprávnění"
-
-#: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Kopírování příkazů do terminálu může být nebezpečné."
-
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
-msgstr "Ujistěte se, že jste pochopili, co každá část tohoto příkazu dělá."
-
-#: src/Dialogs/UnsafePasteDialog.vala:37
-msgid "Show paste protection warnings"
-msgstr "Zobrazovat varování o vkládání"
-
-#: src/Dialogs/UnsafePasteDialog.vala:42
-msgid "Don't Paste"
-msgstr "Nevkládat"
-
-#: src/Dialogs/UnsafePasteDialog.vala:44
-msgid "Paste Anyway"
-msgstr "Přesto vložit"
-
-#: src/Widgets/SearchToolbar.vala:36
-msgid "Find"
-msgstr "Hledat"
-
-#: src/Widgets/SearchToolbar.vala:42
-msgid "Previous result"
-msgstr "Předchozí výsledek"
-
-#: src/Widgets/SearchToolbar.vala:49
-msgid "Next result"
-msgstr "Další výsledek"
-
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
-msgstr "Opakované hledání"
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminál"
+
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Opravdu chcete ukončit Terminál?"
+
+#: src/Widgets/TerminalWidget.vala:963
+msgid "Are you sure you want to reload this tab?"
+msgstr "Opravdu chcete tuto kartu znovu načíst?"
+
+#: src/Widgets/TerminalWidget.vala:964
+msgid "Reload Tab"
+msgstr "Znovu načíst kartu"
+
+#: src/Widgets/TerminalView.vala:63
+msgid "New Tab"
+msgstr "Nová karta"
+
+#: src/Widgets/TerminalView.vala:70
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Zavřít kartu"
+
+#: src/Widgets/TerminalView.vala:222
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:223
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Zavřít kartu"
+
+#: src/Widgets/TerminalView.vala:227
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Nové okno"
+
+#: src/Widgets/TerminalView.vala:228
+#, fuzzy
+#| msgid "Duplicate"
+msgid "Duplicate Tab"
+msgstr "Zduplikovat"
+
+#: src/Widgets/TerminalView.vala:231
+msgid "Reload"
+msgstr "Načíst znovu"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "V této kartě je spuštěný proces."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Pokud ji zavřete, proces bude ukončen."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "V tomto okně terminálu je spuštěný aktivní proces."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Pokud ukončíte Terminál, proces bude ukončen."
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Otevřít nový panel terminálu"
+
+#~ msgid "Show help"
+#~ msgstr "Zobrazit nápovědu"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Tento příkaz vyžaduje administrátorské oprávnění"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Kopírování příkazů do terminálu může být nebezpečné."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr "Ujistěte se, že jste pochopili, co každá část tohoto příkazu dělá."
+
+#~ msgid "Task finished"
+#~ msgstr "Úloha dokončena"
 
 #~ msgid "Show in File Browser"
 #~ msgstr "Zobrazit v prohlížeči souborů"
@@ -227,20 +511,11 @@ msgstr "Terminál"
 #~ msgid "Use the command line"
 #~ msgstr "Použijte příkazovou řádku"
 
-#~ msgid "New Window"
-#~ msgstr "Nové okno"
-
 #~ msgid "New Root Tab"
 #~ msgstr "Nová karta s právy root"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Otevřít terminál zde"
-
-#~ msgid "Close"
-#~ msgstr "Zavřít"
-
-#~ msgid "New Tab"
-#~ msgstr "Nová karta"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Vytvořit novu kartu"
@@ -274,9 +549,6 @@ msgstr "Terminál"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Přejít na předchozí kartu"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Na celou obrazovku"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "Zapnout / Vypnout režim celé obrazovky"

@@ -1,61 +1,40 @@
 /*
-* Copyright 2011-2018 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3 as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2011-2025 elementary, Inc. (https://elementary.io)
+ */
 
 public class Terminal.UnsafePasteDialog : Granite.MessageDialog {
-    public UnsafePasteDialog (MainWindow parent, string text_to_paste) {
-        Object (
-            buttons: Gtk.ButtonsType.NONE,
-            transient_for: parent
-        );
+    public string text_to_paste { get; construct; }
 
-        show_error_details (text_to_paste);
+    public UnsafePasteDialog (MainWindow parent, string title_text, string text_to_paste) {
+        Object (
+            transient_for: parent,
+            primary_text: title_text,
+            text_to_paste: text_to_paste,
+            buttons: Gtk.ButtonsType.NONE
+        );
     }
 
     construct {
         image_icon = new ThemedIcon ("dialog-warning");
-        primary_text = _("This command is asking for Administrative access to your computer");
 
         secondary_text =
-            _("Copying commands into the Terminal can be dangerous.") + " " +
-            _("Be sure you understand what each part of this command does.");
+            _("Copying commands into Terminal can be dangerous. Be sure you understand what each part of the pasted text does before continuing.");
+        show_error_details (text_to_paste);
 
         var show_protection_warnings = new Gtk.CheckButton.with_label (_("Show paste protection warnings"));
 
-        custom_bin.add (show_protection_warnings);
-        custom_bin.show_all ();
+        custom_bin.append (show_protection_warnings);
 
         add_button (_("Don't Paste"), Gtk.ResponseType.CANCEL);
 
         var ignore_button = (Gtk.Button) add_button (_("Paste Anyway"), Gtk.ResponseType.ACCEPT);
-        ignore_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        ignore_button.clicked.connect (on_ignore);
+        ignore_button.add_css_class (Granite.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         set_default_response (Gtk.ResponseType.CANCEL);
 
         Terminal.Application.settings.bind (
             "unsafe-paste-alert", show_protection_warnings, "active", SettingsBindFlags.DEFAULT
         );
-    }
-
-    private void on_ignore () {
-        var terminal_window = get_transient_for ();
-        if (terminal_window is MainWindow) {
-            (terminal_window as MainWindow).unsafe_ignored = true;
-        }
     }
 }

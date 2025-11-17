@@ -1,21 +1,9 @@
 /*
-* Copyright 2017-2020 elementary, Inc. (https://elementary.io)
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*/
+ * Copyright 2017-2024 elementary, Inc. (https://elementary.io)
+ * SPDX-License-Identifier: LGPL-3.0-only
+ */
 
+/* Make sure terminal background can use colors with alpha */
 .terminal-window.background {
     background-color: transparent;
 }
@@ -29,23 +17,15 @@ vte-terminal {
     padding: 0 9px;
 }
 
-.color-button radio,
-.color-button radio:checked {
-   padding: 10px;
-   -gtk-icon-shadow: none;
+.color-button radio {
+    -gtk-icon-shadow: none;
 }
 
-.color-dark radio {
-    background-color: rgb(46, 46, 46);
-    color: #a5a5a5;
+.color-button.custom radio {
+    -gtk-icon-source: -gtk-icontheme("list-add-symbolic");
 }
 
-.color-light radio {
-    background-color: #fdf6e3;
-    color: #586e75;
+.color-button.custom radio:checked {
+    -gtk-icon-source: -gtk-icontheme("check-active-symbolic");
 }
 
-.color-white radio {
-    background-color: #fff;
-    color: #000;
-}

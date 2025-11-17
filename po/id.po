@@ -6,207 +6,485 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pantheon-terminal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 20:29+0000\n"
-"PO-Revision-Date: 2018-06-14 00:07+0000\n"
-"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/terminal/"
+"POT-Creation-Date: 2025-10-24 13:55+0000\n"
+"PO-Revision-Date: 2023-05-23 19:07+0000\n"
+"Last-Translator: kimp <ahmadmiqdad27@gmail.com>\n"
+"Language-Team: Indonesian <https://l10n.elementary.io/projects/terminal/"
 "terminal/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-10-17 06:41+0000\n"
 
-#: src/Application.vala:117
-msgid "Task finished"
-msgstr "Proses selesai"
-
-#: src/Application.vala:251
+#: src/Application.vala:52
 msgid "Show version"
-msgstr ""
+msgstr "Tampilkan versi"
 
-#. -e flag is used for running single string commands. May be more than one -e flag in cmdline
-#: src/Application.vala:253
-msgid "Run a program in terminal"
-msgstr "Jalankan program dalam terminal"
-
-#: src/Application.vala:258
-msgid ""
-"Run remainder of line as a command in terminal. Can also use '--' as flag"
-msgstr ""
-
-#. -n flag forces a new window, instead of a new tab
-#: src/Application.vala:261
-#, fuzzy
-#| msgid "Open a new window"
+#. -n flag forces a new window
+#: src/Application.vala:54
 msgid "Open a new terminal window"
-msgstr "Buka jendela baru"
+msgstr "Buka jendela terminal baru"
 
 #. -t flag forces a new tab
-#: src/Application.vala:264
+#: src/Application.vala:56
 #, fuzzy
-#| msgid "Open a new window"
-msgid "Open a new terminal tab"
-msgstr "Buka jendela baru"
+#| msgid "Open a new terminal window"
+msgid "Open a new terminal tab at current working directory"
+msgstr "Buka jendela terminal baru"
 
-#: src/Application.vala:266
-msgid "Show help"
-msgstr ""
-
-#: src/Application.vala:268
+#. -w flag defines the working directory that the new tab/window uses
+#: src/Application.vala:58
 msgid "Set shell working directory"
 msgstr "Setel direktori kerja shell"
 
-#: src/MainWindow.vala:214
+#. -e flag is used for running single strings as a command line
+#: src/Application.vala:60
+msgid "Run a program in terminal"
+msgstr "Jalankan program dalam terminal"
+
+#. -m flag starts terminal in a minimized state
+#: src/Application.vala:62
+msgid "Open terminal in a minimized state"
+msgstr "Buka terminal dalam keadaan terminimalkan"
+
+#. -x flag is used for using the rest of the command line in the new tab/window
+#: src/Application.vala:65
+msgid "Run remainder of line as a command in terminal"
+msgstr "Jalankan sisa baris sebagai perintah di terminal"
+
+#: src/Application.vala:117
+msgid "[-- COMMAND…]"
+msgstr "[-- PERINTAH…]"
+
+#: src/Application.vala:177
+msgid "Process completed"
+msgstr "Proses selesai"
+
+#: src/Application.vala:180
+msgid "Process exited with errors"
+msgstr "Proses keluar dengan kesalahan"
+
+#: src/MainWindow.vala:155
+msgid "Show Search Bar"
+msgstr ""
+
+#. TerminalWidget actions
+#: src/MainWindow.vala:162
 msgid "Copy"
 msgstr "Salin"
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:168
 msgid "Copy Last Output"
+msgstr "Salin Keluaran Terakhir"
+
+#: src/MainWindow.vala:174
+msgid "Clear Screen"
 msgstr ""
 
-#: src/MainWindow.vala:224
+#: src/MainWindow.vala:180 src/Widgets/TerminalWidget.vala:546
+msgid "Reset"
+msgstr ""
+
+#: src/MainWindow.vala:186
 msgid "Paste"
 msgstr "Tempel"
 
-#: src/MainWindow.vala:229
+#: src/MainWindow.vala:192
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: src/MainWindow.vala:234 src/MainWindow.vala:357 src/MainWindow.vala:1365
+#: src/MainWindow.vala:298
+#, fuzzy
+#| msgid "Fullscreen"
+msgid "Exit FullScreen"
+msgstr "Layar penuh"
+
+#: src/MainWindow.vala:307 src/MainWindow.vala:1048
 msgid "Find…"
 msgstr "Cari…"
 
-#: src/MainWindow.vala:364
+#: src/MainWindow.vala:313
 #, fuzzy
-msgid "Zoom out"
-msgstr "Perkecil"
+#| msgid "New Tab"
+msgid "New Tab…"
+msgstr "Tab Baru"
 
-#: src/MainWindow.vala:371
-msgid "Default zoom level"
-msgstr "Tingkat zoom bawaan"
-
-#: src/MainWindow.vala:378
-#, fuzzy
-msgid "Zoom in"
-msgstr "Perbesar"
-
-#: src/MainWindow.vala:394
-msgid "High Contrast"
-msgstr "Kontras Tinggi"
-
-#: src/MainWindow.vala:402
-msgid "Solarized Light"
-msgstr "Solarized Terang"
-
-#: src/MainWindow.vala:410
-msgid "Dark"
-msgstr ""
-
-#: src/MainWindow.vala:425
-msgid "Natural Copy/Paste"
-msgstr ""
-
-#: src/MainWindow.vala:426
-msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
-msgstr ""
-
-#: src/MainWindow.vala:450
+#: src/MainWindow.vala:325
 msgid "Settings"
-msgstr ""
+msgstr "Pengaturan"
 
-#: src/MainWindow.vala:845
-#, fuzzy, c-format
-#| msgid "Show in File Browser"
-msgid "Show in %s"
-msgstr "Tampilkan pada Penelusur Berkas"
-
-#: src/MainWindow.vala:846
-msgid "Default application"
-msgstr ""
-
-#: src/MainWindow.vala:1357
-msgid "Hide find bar"
-msgstr ""
-
-#: src/Dialogs/ForegroundProcessDialog.vala:26
+#: src/MainWindow.vala:374
 msgid "Are you sure you want to close this tab?"
 msgstr "Yakin ingin menutup tab ini?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:28
-msgid "There is an active process on this tab."
-msgstr "Ada proses aktif di tab ini."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:29
-msgid "If you close it, the process will end."
-msgstr "Jika Anda menutupnya, prosesnya akan berakhir."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:31
+#: src/MainWindow.vala:375 src/Widgets/TerminalView.vala:224
 msgid "Close Tab"
 msgstr "Tutup Tab"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:38
+#. Changing attributes has no effect after adding item to menu so remove and re-add.
+#. This item was added first
+#: src/MainWindow.vala:576
+#, c-format
+msgid "Show in %s"
+msgstr "Tampilkan pada %s"
+
+#: src/MainWindow.vala:578
+msgid "Default application"
+msgstr "Aplikasi bawaan"
+
+#: src/MainWindow.vala:891
 msgid "Are you sure you want to quit Terminal?"
 msgstr "Apa Anda yakin ingin keluar dari Terminal?"
 
-#: src/Dialogs/ForegroundProcessDialog.vala:40
-msgid "There is an active process on this terminal."
-msgstr "Ada proses aktif di terminal ini."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:41
-msgid "If you quit Terminal, the process will end."
-msgstr "Jika Anda keluar dari Terminal, prosesnya akan berakhir."
-
-#: src/Dialogs/ForegroundProcessDialog.vala:43
+#: src/MainWindow.vala:892
 msgid "Quit Terminal"
 msgstr "Keluar Terminal"
 
-#: src/Dialogs/UnsafePasteDialog.vala:31
-msgid "This command is asking for Administrative access to your computer"
-msgstr "Perintah ini meminta akses Administratif ke komputer Anda"
+#: src/MainWindow.vala:1039
+msgid "Hide find bar"
+msgstr "Sembunyikan bilah pencarian"
 
-#: src/Dialogs/UnsafePasteDialog.vala:34
-msgid "Copying commands into the Terminal can be dangerous."
-msgstr "Menyalin perintah ke Terminal bisa berbahaya."
+#: src/Utils.vala:142
+msgid "The pasted text may contain multiple commands"
+msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
 
-#: src/Dialogs/UnsafePasteDialog.vala:35
-msgid "Be sure you understand what each part of this command does."
+#: src/Utils.vala:146
+msgid "The pasted text may be trying to gain administrative access"
+msgstr "Teks yang ditempelkan mungkin mencoba mendapatkan akses administratif"
+
+#: src/Utils.vala:161
+msgid "The pasted text includes a command to skip warnings and confirmations"
 msgstr ""
-"Pastikan Anda memahami apa yang masing-masing bagian dari perintah ini."
 
-#: src/Dialogs/UnsafePasteDialog.vala:37
+#: src/Dialogs/ColorPreferencesDialog.vala:37
+msgid "Color Preferences"
+msgstr "Preferensi Warna"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:39
+msgid "Window style:"
+msgstr "Gaya jendela:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:46
+msgid "Light"
+msgstr "Terang"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:47
+#: src/Widgets/SettingsPopover.vala:78
+msgid "Dark"
+msgstr "Gelap"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:51
+msgid "Color Palette"
+msgstr "Palet Warna"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:61
+msgid "Reset to default"
+msgstr "Setel ulang ke bawaan"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:64
+msgid "Black:"
+msgstr "Hitam:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:65
+msgid "Red:"
+msgstr "Merah:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:66
+msgid "Green:"
+msgstr "Hijau:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:67
+msgid "Yellow:"
+msgstr "Kuning:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:68
+msgid "Blue:"
+msgstr "Biru:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:69
+msgid "Magenta:"
+msgstr "Magenta:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:70
+msgid "Cyan:"
+msgstr "Cyan:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:71
+msgid "Gray:"
+msgstr "Abu-abu:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:72
+msgid "White:"
+msgstr "Putih:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:73
+msgid "Light Red:"
+msgstr "Merah Terang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:74
+msgid "Light Green:"
+msgstr "Hijau Terang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:75
+msgid "Light Yellow:"
+msgstr "Kuning Terang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:76
+msgid "Light Blue:"
+msgstr "Biru Terang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:77
+msgid "Light Magenta:"
+msgstr "Magenta Terang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:78
+msgid "Light Cyan:"
+msgstr "Cyan Terang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:79
+msgid "Light Gray:"
+msgstr "Abu-abu Terang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:80
+msgid "Background:"
+msgstr "Latar Belakang:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:81
+msgid "Foreground:"
+msgstr "Latar Depan:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:82
+msgid "Cursor:"
+msgstr "Kursor:"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:179
+msgid "Close"
+msgstr "Tutup"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:299
+msgid "Contrast is very low"
+msgstr "Kontras sangat rendah"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:302
+msgid "Contrast is low"
+msgstr "Kontras rendah"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:305
+msgid "Contrast is good"
+msgstr "Kontras baik"
+
+#: src/Dialogs/ColorPreferencesDialog.vala:308
+msgid "Contrast is high"
+msgstr "Kontras tinggi"
+
+#: src/Dialogs/ForegroundProcessDialog.vala:23
+#, fuzzy
+#| msgid ""
+#| "There is an active process on this tab. If you reload it, the process "
+#| "will end."
+msgid ""
+"There is an active process on this tab. If you continue, the process will "
+"end."
+msgstr ""
+"Ada proses aktif di tab ini. Jika Anda memuat ulang, prosesnya akan berakhir."
+
+#: src/Dialogs/UnsafePasteDialog.vala:22
+msgid ""
+"Copying commands into Terminal can be dangerous. Be sure you understand what "
+"each part of the pasted text does before continuing."
+msgstr ""
+"Menyalin perintah ke Terminal bisa berbahaya. Pastikan Anda memahami apa "
+"yang dilakukan setiap bagian dari teks yang ditempelkan sebelum melanjutkan."
+
+#: src/Dialogs/UnsafePasteDialog.vala:25
 msgid "Show paste protection warnings"
-msgstr ""
+msgstr "Tampilkan peringatan perlindungan tempel"
 
-#: src/Dialogs/UnsafePasteDialog.vala:42
+#: src/Dialogs/UnsafePasteDialog.vala:30
 msgid "Don't Paste"
 msgstr "Jangan Tempel"
 
-#: src/Dialogs/UnsafePasteDialog.vala:44
+#: src/Dialogs/UnsafePasteDialog.vala:32
 msgid "Paste Anyway"
 msgstr "Tempelkan saja"
 
-#: src/Widgets/SearchToolbar.vala:36
+#: src/Widgets/SearchToolbar.vala:20
 msgid "Find"
-msgstr "Cari"
+msgstr "Temukan"
 
-#: src/Widgets/SearchToolbar.vala:42
+#: src/Widgets/SearchToolbar.vala:27
 msgid "Previous result"
 msgstr "Hasil sebelumnya"
 
-#: src/Widgets/SearchToolbar.vala:49
+#: src/Widgets/SearchToolbar.vala:35
 msgid "Next result"
-msgstr "Hasil berikutnya"
+msgstr "Hasil selanjutnya"
 
-#: src/Widgets/SearchToolbar.vala:58
-msgid "Cyclic search"
+#: src/Widgets/SearchToolbar.vala:46
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Disable cyclic search"
 msgstr "Pencarian siklik"
+
+#: src/Widgets/SearchToolbar.vala:49
+#, fuzzy
+#| msgid "Cyclic search"
+msgid "Enable cyclic search"
+msgstr "Pencarian siklik"
+
+#: src/Widgets/SettingsPopover.vala:31
+msgid "Zoom out"
+msgstr "Perkecil"
+
+#: src/Widgets/SettingsPopover.vala:39
+msgid "Default zoom level"
+msgstr "Tingkat zoom bawaan"
+
+#: src/Widgets/SettingsPopover.vala:47
+msgid "Zoom in"
+msgstr "Perbesar"
+
+#: src/Widgets/SettingsPopover.vala:65
+msgid "Follow System Style"
+msgstr "Ikuti Gaya Sistem"
+
+#: src/Widgets/SettingsPopover.vala:70
+msgid "High Contrast"
+msgstr "Kontras Tinggi"
+
+#: src/Widgets/SettingsPopover.vala:74
+msgid "Solarized Light"
+msgstr "Solarized Terang"
+
+#: src/Widgets/SettingsPopover.vala:82
+msgid "Custom"
+msgstr "Kustom"
+
+#: src/Widgets/SettingsPopover.vala:103
+msgid "Natural Copy/Paste"
+msgstr "Salin/Tempel Alami"
+
+#: src/Widgets/SettingsPopover.vala:104
+msgid "Shortcuts don’t require Shift; may interfere with CLI apps"
+msgstr "Pintasan tidak memerlukan Shift; dapat mengganggu aplikasi CLI"
+
+#: src/Widgets/SettingsPopover.vala:108
+msgid "Unsafe Paste Alert"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:109
+#, fuzzy
+#| msgid "The pasted text may contain multiple commands"
+msgid "Warn when pasted text contains multiple or administrative commands"
+msgstr "Teks yang ditempelkan mungkin berisi beberapa perintah"
+
+#: src/Widgets/SettingsPopover.vala:113
+msgid "Event Alerts"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:114
+msgid ""
+"Notify for invalid input or multiple possible completions (subject to System "
+"Settings → Sound)"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:118
+msgid "Auto-hide Tab Bar"
+msgstr ""
+
+#: src/Widgets/SettingsPopover.vala:119
+msgid "Hide the tab bar when there is only one tab"
+msgstr ""
 
 #: src/Widgets/TerminalWidget.vala:28
 msgid "Terminal"
 msgstr "Terminal"
+
+#: src/Widgets/TerminalWidget.vala:545
+#, fuzzy
+#| msgid "Are you sure you want to quit Terminal?"
+msgid "Are you sure you want to reset the terminal?"
+msgstr "Apa Anda yakin ingin keluar dari Terminal?"
+
+#: src/Widgets/TerminalWidget.vala:963
+msgid "Are you sure you want to reload this tab?"
+msgstr "Yakin ingin memuat ulang tab ini?"
+
+#: src/Widgets/TerminalWidget.vala:964
+msgid "Reload Tab"
+msgstr "Muat Ulang Tab"
+
+#: src/Widgets/TerminalView.vala:63
+msgid "New Tab"
+msgstr "Tab Baru"
+
+#: src/Widgets/TerminalView.vala:70
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Closed Tabs"
+msgstr "Tutup Tab"
+
+#: src/Widgets/TerminalView.vala:222
+msgid "Close Tabs to the Right"
+msgstr ""
+
+#: src/Widgets/TerminalView.vala:223
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Other Tabs"
+msgstr "Tutup Tab"
+
+#: src/Widgets/TerminalView.vala:227
+#, fuzzy
+#| msgid "New Window"
+msgid "Open in New Window"
+msgstr "Jendela Baru"
+
+#: src/Widgets/TerminalView.vala:228
+#, fuzzy
+#| msgid "Duplicate"
+msgid "Duplicate Tab"
+msgstr "Gandakan"
+
+#: src/Widgets/TerminalView.vala:231
+msgid "Reload"
+msgstr "Muat Ulang"
+
+#: src/Widgets/ZoomOverlay.vala:15
+#, c-format
+msgid "Zoom: %.0f%%"
+msgstr ""
+
+#~ msgid "There is an active process on this tab."
+#~ msgstr "Ada proses aktif di tab ini."
+
+#~ msgid "If you close it, the process will end."
+#~ msgstr "Jika Anda menutupnya, prosesnya akan berakhir."
+
+#~ msgid "There is an active process on this terminal."
+#~ msgstr "Ada proses aktif di terminal ini."
+
+#~ msgid "If you quit Terminal, the process will end."
+#~ msgstr "Jika Anda keluar dari Terminal, prosesnya akan berakhir."
+
+#~ msgid "Open a new terminal tab"
+#~ msgstr "Buka tab terminal baru"
+
+#~ msgid "This command is asking for Administrative access to your computer"
+#~ msgstr "Perintah ini meminta akses Administratif ke komputer Anda"
+
+#~ msgid "Copying commands into the Terminal can be dangerous."
+#~ msgstr "Menyalin perintah ke Terminal bisa berbahaya."
+
+#~ msgid "Be sure you understand what each part of this command does."
+#~ msgstr ""
+#~ "Pastikan Anda memahami apa yang masing-masing bagian dari perintah ini."
+
+#~ msgid "Task finished"
+#~ msgstr "Proses selesai"
 
 #~ msgid "Style"
 #~ msgstr "Gaya"
@@ -226,20 +504,11 @@ msgstr "Terminal"
 #~ msgid "Use the command line"
 #~ msgstr "Gunakan baris perintah"
 
-#~ msgid "New Window"
-#~ msgstr "Jendela Baru"
-
 #~ msgid "New Root Tab"
 #~ msgstr "Tab Root Baru"
 
 #~ msgid "Open Terminal Here"
 #~ msgstr "Buka Terminal Di Sini"
-
-#~ msgid "Close"
-#~ msgstr "Tutup"
-
-#~ msgid "New Tab"
-#~ msgstr "Tab Baru"
 
 #~ msgid "Create a new tab"
 #~ msgstr "Buat tab baru"
@@ -273,9 +542,6 @@ msgstr "Terminal"
 
 #~ msgid "Go to previous tab"
 #~ msgstr "Pindah ke tab sebelumnya"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Layar penuh"
 
 #~ msgid "Toggle/Untoggle fullscreen"
 #~ msgstr "On/Off layar penuh"
